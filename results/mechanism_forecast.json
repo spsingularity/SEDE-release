@@ -1,0 +1,9 @@
+{
+  "sigma_geom": 0.192,
+  "sigma_growth_WL": 0.25,
+  "sigma_growth_trio": 0.14468118907052016,
+  "sigma_growth_all": 0.12998247175048397,
+  "sigma_decoupling_WL": 3.1723819261023705,
+  "sigma_decoupling_trio": 4.15957232401549,
+  "sigma_decoupling_all": 4.31293209030669
+}

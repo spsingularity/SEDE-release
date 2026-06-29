@@ -1,0 +1,18 @@
+{
+  "R_over_lP": 8e+60,
+  "S_volume": 2.8509839343778337e+183,
+  "S_holographic": 2.0106192982974674e+122,
+  "S_bekenstein": 1.6844124844525837e+123,
+  "viol_holographic": 1.4179630807244126e+61,
+  "viol_bekenstein": 1.6925687506432686e+60,
+  "exp_S_volume": 3.0,
+  "exp_S_holo": 2.0000000000000004,
+  "exp_viol": 1.0000000000000002,
+  "exp_fractal_area": 3.0000000000000013,
+  "fractal_escape_exact": true,
+  "verdict": {
+    "violates_smooth_bound": true,
+    "violation_is_linear_in_R": true,
+    "fractal_escape_consistent": true
+  }
+}

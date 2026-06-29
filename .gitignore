@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+
+# Regenerable outputs (rebuilt by reproduce_all.py / make_all_figures.py)
+output/
+cache/
+*.npy
+results/*.log
+
+# Datasets are NOT redistributed here — fetch them yourself (see DATA.md)
+data/
+
+# LaTeX / arXiv build artifacts (regenerate via paper/build_tex.sh, make_arxiv.sh)
+paper/.SEDE.proc.md
+paper/.body_test.tex
+paper/build.log
+paper/arxiv/
+paper/SEDE_arxiv.tar.gz
+paper/tex/*.aux
+paper/tex/*.log
+paper/tex/*.out
+paper/tex/*.toc
+paper/tex/*.blg
+paper/tex/*.bbl
+paper/tex/*.build.log
+paper/tex/*.synctex.gz
+paper/tex/main.pdf
+
+# Heavy external installs (NOT part of the release)
+packages/
+literature/

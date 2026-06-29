@@ -1,0 +1,33 @@
+{
+  "n": 80,
+  "N": 6400,
+  "deg": 6,
+  "Rs": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "local": [
+    24,
+    32,
+    40,
+    48,
+    56
+  ],
+  "nonlocal_": [
+    361,
+    606,
+    922,
+    1309,
+    1816
+  ],
+  "exp_local": 1.0000000000000013,
+  "exp_nonlocal": 1.8986122804579466,
+  "verdict": {
+    "local_is_area": true,
+    "nonlocal_is_volume": true,
+    "gap": true
+  }
+}

@@ -1,0 +1,69 @@
+theory:
+  camb:
+    extra_args:
+      lens_potential_accuracy: 1
+      dark_energy_model: ppf
+likelihood:
+  planck_2018_highl_plik.TTTEEE: null
+  planck_2018_lowl.TT: null
+  planck_2018_lowl.EE: null
+params:
+  ombh2:
+    prior:
+      min: 0.019
+      max: 0.025
+    ref: 0.02237
+    proposal: 0.0001
+  omch2:
+    prior:
+      min: 0.1
+      max: 0.14
+    ref: 0.12
+    proposal: 0.001
+  cosmomc_theta:
+    prior:
+      min: 0.0103
+      max: 0.0105
+    ref: 0.0104109
+    proposal: 1.0e-06
+  logA:
+    prior:
+      min: 2.9
+      max: 3.2
+    ref: 3.044
+    proposal: 0.01
+    drop: true
+  As:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    derived: false
+  ns:
+    prior:
+      min: 0.92
+      max: 1.0
+    ref: 0.9649
+    proposal: 0.004
+  tau:
+    prior:
+      min: 0.02
+      max: 0.1
+    ref: 0.0544
+    proposal: 0.008
+  A_planck:
+    prior:
+      dist: norm
+      loc: 1.0
+      scale: 0.0025
+    ref: 1.0
+    proposal: 0.002
+  H0:
+    latex: H_0
+  omegam:
+    latex: \Omega_m
+  w: -0.9761386329211942
+  wa: -0.14129933022563831
+sampler:
+  minimize:
+    method: bobyqa
+    max_evals: 1500
+packages_path: ./packages
+output: e1_min_fp_sede

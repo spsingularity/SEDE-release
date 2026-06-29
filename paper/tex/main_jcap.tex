@@ -1,0 +1,79 @@
+% Structural Entropy Dark Energy — JCAP version (jcappub class).
+% Shares the SAME body with the RevTeX version via \input{body}.
+%
+% REQUIRES jcappub.sty + JHEP.bst, obtainable from the JCAP author area
+% (https://jcap.sissa.it -> "For authors" -> manuscript preparation / LaTeX class).
+% They are not on CTAN, so this file cannot be compiled until those two files are
+% placed alongside it. NOTE: JCAP accepts INITIAL submissions as a single PDF in
+% any reasonable format, so the RevTeX main.pdf suffices to submit; this jcappub
+% version is for the revision/acceptance stage.
+%
+% Build (once jcappub.sty and JHEP.bst are present):
+%   pdflatex main_jcap && bibtex main_jcap && pdflatex main_jcap && pdflatex main_jcap
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+\usepackage{jcappub}          % loads amsmath, amssymb, graphicx, hyperref, etc.
+\graphicspath{{../../output/paper/}{../../output/}}
+
+% --- macros (same as the RevTeX version) ---
+\newcommand{\Mpl}{M_{\mathrm P}}
+\newcommand{\rhoDE}{\rho_{\mathrm{DE}}}
+\newcommand{\rhocr}{\rho_{\mathrm{crit}}}
+\newcommand{\pDE}{p_{\mathrm{DE}}}
+\newcommand{\TAH}{T_{\mathrm{AH}}}
+\newcommand{\sgrav}{s_{\mathrm{grav}}}
+\newcommand{\fsat}{f_{\mathrm{sat}}}
+\newcommand{\RAH}{R_{\mathrm{AH}}}
+\newcommand{\VAH}{V_{\mathrm{AH}}}
+\newcommand{\Om}{\Omega_{\mathrm m}}
+\newcommand{\Orad}{\Omega_{\mathrm r}}
+\newcommand{\ODEz}{\Omega_{\mathrm{DE0}}}
+\newcommand{\LCDM}{\Lambda\mathrm{CDM}}
+
+% --- RevTeX -> article/jcappub compatibility shims (so body.tex compiles unchanged) ---
+% RevTeX's ruledtabular/\colrule and the acknowledgments environment are not in
+% article; these passthrough/equivalent definitions keep the shared body valid.
+% (For the final JCAP proof, replace with the journal's preferred table style.)
+\providecommand{\colrule}{\hline}
+\newenvironment{ruledtabular}{}{}
+\newenvironment{acknowledgments}{\section*{Acknowledgments}}{}
+
+\title{Structural Entropy Dark Energy: a fixed-parameter, $\Lambda$-free dark-energy model from horizon thermodynamics}
+
+\author[a]{Stilian Pandev}
+\affiliation[a]{Independent researcher}
+\emailAdd{stilian.pandev@gmail.com}
+
+\keywords{dark energy theory, dark energy experiments, cosmological perturbation theory, physics of the early universe}
+
+\abstract{%
+We present Structural Entropy Dark Energy (SEDE), a $\Lambda$-free model in which dark energy is the
+thermodynamic conjugate of the cosmic apparent-horizon entropy, $\rhoDE=\TAH\,\sgrav\,\fsat(z)$, gated
+by a structure-growth factor $\fsat$ (normalised to $1$ today) whose redshift dependence follows a
+halo-binding-entropy prescription. A single Friedmann fixed-point equation replaces the cosmological
+constant by a structure-gated, horizon-coupled term that adds \emph{no fitted dark-energy parameter}
+relative to $\LCDM$: the $H$-coupling $\lambda=1/2$ follows from a volume-law horizon entropy (the
+maximal Barrow deformation $\Delta=1$, retained only as a falsifiable test axis), the equation of state
+from spatial flatness, the coupling $\gamma\approx1.5$ from halo binding, and the sound speed
+$c_s^2=1$ from a background functional. In a marginalised, CAMB-in-the-loop joint analysis (DESI DR2
+BAO, Pantheon$+$/DES-5YR/Union3 supernovae, cosmic chronometers, $f\sigma_8$, and compressed Planck
+data), SEDE is mildly preferred over $\LCDM$ ($\Delta\mathrm{DIC}\approx-2.9$). A false-preference
+calibration indicates this is not obviously attributable to model flexibility ($\sim2$--$3\sigma$,
+depending on the CMB-distance treatment), and a pre-DESI~$\to$~DESI split shows a SEDE realisation
+trained on pre-DESI data predicts the DESI DR2 BAO trend better than $\LCDM$. The equation of state
+crosses $-1$ with $w_a<0$, in DESI's evolving-dark-energy quadrant, and the vacuum-energy-scale problem
+is recast via the Cohen--Kaplan--Nelson bound rather than inherited. The quantum-gravitational content
+reduces to a single falsifiable postulate---a volume-law (thermalised) horizon entropy---sharply
+testable by a measurement of $\Delta$ with DESI DR3 and Euclid (forecast $\sigma(\Delta)\approx0.09$,
+$\sim11\sigma$ from a smooth horizon). SEDE is suggestive but not established; the next generation of
+surveys will decide.}
+
+\begin{document}
+\maketitle
+
+\input{body}
+
+\bibliographystyle{JHEP}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,128 @@
+{
+  "canonical_gamma": 1.496418440450764,
+  "min": 1.1429064392355137,
+  "max": 1.5953634524845661,
+  "median": 1.496418440450764,
+  "p_weight": 1.6666666666666667,
+  "rows": [
+    {
+      "model": "press74",
+      "mdef": "fof",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.566494116217232
+    },
+    {
+      "model": "press74",
+      "mdef": "fof",
+      "range": "narrow[1e11,1e15]",
+      "transfer": "eisenstein98",
+      "gamma": 1.4118942199783824
+    },
+    {
+      "model": "press74",
+      "mdef": "fof",
+      "range": "massive[1e12,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.5953634524845661
+    },
+    {
+      "model": "sheth99",
+      "mdef": "fof",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.496418440450764
+    },
+    {
+      "model": "sheth99",
+      "mdef": "fof",
+      "range": "narrow[1e11,1e15]",
+      "transfer": "eisenstein98",
+      "gamma": 1.1789367471183532
+    },
+    {
+      "model": "sheth99",
+      "mdef": "fof",
+      "range": "massive[1e12,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.515683487389019
+    },
+    {
+      "model": "tinker08",
+      "mdef": "200m",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.5038632851686273
+    },
+    {
+      "model": "tinker08",
+      "mdef": "200m",
+      "range": "narrow[1e11,1e15]",
+      "transfer": "eisenstein98",
+      "gamma": 1.2174591139046953
+    },
+    {
+      "model": "tinker08",
+      "mdef": "200m",
+      "range": "massive[1e12,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.522390889882086
+    },
+    {
+      "model": "despali16",
+      "mdef": "200m",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.4962680069530165
+    },
+    {
+      "model": "despali16",
+      "mdef": "200m",
+      "range": "narrow[1e11,1e15]",
+      "transfer": "eisenstein98",
+      "gamma": 1.1841368935714414
+    },
+    {
+      "model": "despali16",
+      "mdef": "200m",
+      "range": "massive[1e12,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.5149517752696795
+    },
+    {
+      "model": "watson13",
+      "mdef": "fof",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.483988047665541
+    },
+    {
+      "model": "watson13",
+      "mdef": "fof",
+      "range": "narrow[1e11,1e15]",
+      "transfer": "eisenstein98",
+      "gamma": 1.1429064392355137
+    },
+    {
+      "model": "watson13",
+      "mdef": "fof",
+      "range": "massive[1e12,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.5000569941275188
+    },
+    {
+      "model": "sheth99",
+      "mdef": "fof",
+      "range": "full[1e10,1e16]",
+      "transfer": "eisenstein98",
+      "gamma": 1.496418440450764
+    },
+    {
+      "model": "sheth99",
+      "mdef": "fof",
+      "range": "full[1e10,1e16]",
+      "transfer": "sugiyama95",
+      "gamma": 1.5146333416254265
+    }
+  ]
+}

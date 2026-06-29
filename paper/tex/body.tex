@@ -1,0 +1,1114 @@
+\section{Introduction}\label{sec:intro}
+The standard model $\LCDM$ fits an extraordinary range of data with a cosmological constant $\Lambda$
+whose value confronts two long-standing puzzles. The \emph{cosmological-constant problem}: if $\Lambda$
+is the energy of the quantum vacuum, na\"ive effective field theory overshoots the observed value by
+$\sim10^{120}$. The \emph{coincidence problem}: $\rhoDE\sim\rho_{\mathrm m}$ today despite scaling
+differently with expansion. Recent DESI~DR2 results~\cite{DESI:2025zgx} give a mild preference for
+\emph{evolving} dark energy ($w$ crossing $-1$), reopening whether $\Lambda$ is fundamental.
+
+We approach this through an accounting question. As structure forms, collapsing halos release
+gravitational binding energy, and dark energy activates over the \emph{same} epoch that structure
+formation saturates. A one-line budget rules out an energy supply: a virialised system has
+$|E_{\rm bind}|/Mc^2\sim\sigma^2/c^2\sim10^{-5}$ (clusters; galaxies $\sim10^{-7}$), so the
+binding-energy density is $\sim10^{6}$ times too small to \emph{be} $\rhoDE$. The link, if any, cannot
+be energetic.
+
+The resolution is thermodynamic: we identify dark energy with the conjugate thermal energy density of
+the cosmic horizon (motivated by horizon thermodynamics~\cite{Jacobson:1995ab,Cai:2005ra}),
+\begin{equation}
+\rhoDE=\TAH\,\sgrav\,\fsat(z),
+\label{eq:ansatz}
+\end{equation}
+whose \emph{scale} is the horizon's own, $\TAH s\sim\Mpl^2H^2\sim\rhocr$, rather than the QFT vacuum
+(so the vacuum-energy-scale problem is recast, not inherited). What structure supplies is not energy
+but entropy bookkeeping: by the horizon first law $\delta Q=T\,dS$, halo virialisation fixes the
+\emph{redshift dependence} of the activation fraction $\fsat(z)\in[0,1]$, while its amplitude and the
+$\fsat(0)=1$ normalisation are set by the horizon-scale normalisation. The coincidence is then a
+consequence of the mechanism, not a tuning.
+
+The idea that dark energy is tied to the entropy/information produced as structure forms originates
+with Gough's information dark energy~\cite{Gough2008,Gough:2011eq,Gough2025}, whose priority we credit;
+what is specific to SEDE is the \emph{mechanism} (a gravitational horizon-entropy realisation, driven
+by the gravitational growth factor rather than the baryonic star-formation history) and a
+parameter-free dark sector, quantified in Sec.~\ref{sec:relations}.
+
+By \emph{$\Lambda$-free} we mean the late-time acceleration is not a constant stress-energy term but a
+self-conserved horizon fluid whose present amplitude is fixed by flatness
+($\ODEz=1-\Om-\Orad$)---exactly as flat $\LCDM$ fixes $\Omega_{\Lambda 0}$---and whose redshift
+dependence is set by the horizon/growth prescription. The distinctive feature is that the dark sector
+adds \emph{no fitted parameter} (Sec.~\ref{sec:inputs}); the price is a single postulate about the
+quantum-gravitational structure of the horizon (Sec.~\ref{sec:qg}).
+
+\section{The model and energy conservation}\label{sec:model}
+
+\paragraph{Conjugate horizon-fluid ansatz.}
+At the flat-FRW apparent horizon $\RAH=1/H$, the Cai--Kim temperature is
+$\TAH=(H/2\pi)(1-\varepsilon/2)$, $\varepsilon\equiv-\dot H/H^2$; the $O(1)$ factor is absorbed into
+the $\fsat(0)=1$ normalisation, so the headline model uses $\TAH=H/2\pi$. We take $\sgrav$ to be the
+coarse-grained entanglement entropy in the apparent-horizon \emph{volume},
+$S_{\rm grav}\propto\VAH\propto\RAH^3$---a \emph{constant} entropy density $\sgrav=s_0$ (in contrast to
+the Bekenstein--Hawking area-law density $s_{\rm AH}\propto H$). With $\TAH\propto H$,
+\begin{equation}
+\rhoDE=\TAH\,s_0\,\fsat\;\propto\;H\,\fsat,\qquad
+s_0=\frac{\ODEz\,\rho_{\rm crit,0}}{T_{\mathrm{AH},0}}
+\label{eq:rhoH}
+\end{equation}
+(the constant $s_0$ fixed by flatness),
+i.e.\ $\rhoDE\propto H\fsat$ with no free parameter. This volume law is the maximal Barrow deformation
+($S\propto A^{1+\Delta/2}=A^{3/2}=R^3$ at $\Delta=1$, $\lambda=1-\Delta/2=1/2$); $\Delta$ is retained
+only as a \emph{test} parameter (Sec.~\ref{sec:qg}).
+
+\paragraph{Structure gate.}
+Structure formation supplies the redshift dependence of the gate through the collapsed-halo abundance,
+giving the closed form
+\begin{equation}
+\fsat(z)=\frac{1-e^{-\gamma D^2(z)}}{1-e^{-\gamma}},
+\label{eq:fsat}
+\end{equation}
+with $D(z)$ the model's self-consistent linear growth factor (computed with SEDE's own $E(z)$), the
+normalisation $\fsat(0)=1$, and $\fsat\to0$ at high $z$. The single shape parameter $\gamma$ is fixed
+by a halo-entropy prescription (Sec.~\ref{sec:inputs}), not fitted.
+
+\paragraph{Friedmann fixed point.}
+Inserting $\rhoDE$ into the unmodified Friedmann constraint gives a single fixed-point equation for
+$E=H/H_0$,
+\begin{equation}
+\boxed{\,E^2(z)=\Om(1+z)^3+\Orad(1+z)^4+\ODEz\,\fsat(z)\,E(z)\,}
+\label{eq:friedmann}
+\end{equation}
+(for $\lambda=1/2$, so $E^{2\lambda}=E$). Equation~\eqref{eq:friedmann} is the entire background model:
+$\LCDM$ with the constant $\Lambda$ replaced by the structure-gated, horizon-coupled term
+$\ODEz\fsat(z)E(z)$; at $z=0$ with $\fsat=1$ it reproduces $\ODEz=1-\Om$.
+
+\paragraph{Replacement of $\Lambda$.}
+SEDE is holographic dark energy, not modified gravity: the Einstein tensor and $G$ are untouched, and
+the deformation enters only a smooth ($c_s^2=1$) perfect fluid,
+\begin{equation}
+\begin{gathered}
+G_{\mu\nu}=8\pi G\,(T^{\rm (m)}_{\mu\nu}+T^{\rm (DE)}_{\mu\nu}),\\
+\rhoDE=\tfrac{3}{8\pi G}\,\ODEz\,H H_0\,\fsat,\qquad \pDE=w(z)\rhoDE .
+\end{gathered}
+\label{eq:efe}
+\end{equation}
+Equivalently $\Lambda$ becomes a running scalar $\Lambda_{\rm eff}(z)=3\ODEz H H_0\fsat$. A
+Barrow-\emph{modified-gravity} Friedmann equation would instead rescale the early-universe expansion by
+$(\Mpl/H)^\Delta\sim10^{61}$, a nucleosynthesis catastrophe (Sec.~\ref{sec:qg}); keeping the
+deformation in the fluid leaves the early universe exactly standard.
+
+\paragraph{Energy conservation.}
+Because SEDE is general relativity with a fluid source, the Bianchi identity forces total covariant
+conservation; matter dilutes standardly and dark energy is a self-conserved fluid,
+\begin{equation}
+\dot\rhoDE+3H(1+w_{\rm DE})\rhoDE=0,\qquad
+w_{\rm DE}(a)=-1-\tfrac13\frac{d\ln\rhoDE}{d\ln a}.
+\label{eq:cons}
+\end{equation}
+There is no literal energy transfer from matter to dark energy: the magnitude of $\rhoDE$ is anchored
+to the horizon scale $\sim\Mpl^2H^2\sim\rhocr$ through the Cohen--Kaplan--Nelson
+bound~\cite{Cohen:1998zx} and flatness (Sec.~\ref{sec:qg}), while the binding energy plays a purely
+entropic, shape-setting role.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig1_mechanism}
+\caption{The mechanism. \emph{Left:} the activation fraction (structure-growth gate) $\fsat(z)$ rises
+toward $1$ today as structure forms, so the effective running term $\Lambda_{\rm eff}=3\ODEz H H_0\fsat$
+fades in (computed from the model's self-consistent growth factor $D(z)$). \emph{Right:} the cosmic
+density inventory; SEDE's $\rhoDE$ is orders of magnitude below matter and radiation at high $z$ and
+falls below $\LCDM$'s constant $\rho_\Lambda$, so the early universe (BBN, recombination) is
+standard---the deformation acts only on the late-time dark-energy fluid.}
+\label{fig:mechanism}
+\end{figure}
+
+% ===================================================================================
+% TODO — port the remaining sections from ../SEDE.md (canonical source):
+\section{The fixed inputs: why the dark sector adds no fitted parameter}\label{sec:inputs}
+In flat $\LCDM$ the dark-energy amplitude $\Omega_{\Lambda0}=1-\Om-\Orad$ is itself fixed by the
+flatness closure, not an independent fit; SEDE keeps exactly this---no independent dark-energy amplitude
+beyond flatness---and differs only in that the \emph{redshift dependence} is set by the horizon/growth
+prescription rather than held constant. That prescription fixes the triplet
+($\gamma$, $w(z)$-shape, $\lambda$) plus the sound speed $c_s^2$, and each is fixed by a stated
+theoretical choice (not fitted to cosmological data), so SEDE adds no free dark-energy parameter. The
+choices separate along the two scales of Sec.~\ref{sec:model}: the \emph{magnitude} of dark energy is
+the horizon scale, $\sim\Mpl^2H^2\sim\rhocr$ (the CKN bound normalised by flatness,
+Sec.~\ref{sec:qg}), while the choices control the \emph{shape}---\emph{when} and \emph{how sharply}
+that energy turns on. We therefore lead with $\gamma$.
+
+\subsection{The structure coupling $\gamma\approx1.5$ from a halo-binding-entropy prescription}
+$\gamma$ sets the sharpness of the gate, $\gamma=d\ln\Sigma_S/d\ln\sigma_8$ with $\Sigma_S$ the
+entropy-weighted collapsed mass, $\Sigma_S=\int M^p\,(dn/d\ln M)\,d\ln M$. The weight exponent $p$ is
+fixed by \emph{where} the structure-formation entropy is deposited. Under the prescription that the
+released gravitational binding energy $E_{\rm bind}\propto M^{5/3}$ is accounted in the
+\emph{cosmic-horizon} entropy ledger (Sec.~\ref{sec:model}) at its temperature $\TAH\propto H$, the
+Clausius relation adds $\Delta S_{\rm AH}=E_{\rm bind}/\TAH\propto M^{5/3}$ ($\TAH$ being
+mass-independent at a fixed epoch). Hence $p=5/3$, and a standard Sheth--Tormen mass
+function~\cite{Sheth:1999mn} gives $\gamma\approx1.50$, close to the value favoured in diagnostic
+fits. This is a fixed prescription, not a universal constant: the numerical $\gamma$ depends on the
+adopted mass function, mass and redshift range, and entropy-weighting choice, and is fixed
+\emph{without fitting to cosmological data}. (The earlier expectation $p=1$ used the halo's internal
+virial temperature $T_{\rm vir}\propto M^{2/3}$; the reservoir adopted here is the horizon, not the
+halo.)
+
+\subsection{The equation of state $w(z)$ from the background, conservation, and flatness}
+The model has a single physical equation of state---that of the canonical fixed-point background,
+Eq.~\eqref{eq:friedmann}---obtained from energy conservation, Eq.~\eqref{eq:cons}, with
+$\rhoDE=\ODEz\rho_{\rm crit,0}E\fsat$ and the present-day normalisation fixed by spatial flatness
+($\ODEz=1-\Om-\Orad$, $\fsat(0)=1$). Evaluated on the self-consistent background this gives
+$w_0\approx-1.0$, \emph{crossing} $-1$ at low redshift ($z\approx0.2$) and dipping to $\approx-1.08$ by
+$z\approx2$---DESI~DR2's thawing/crossing quadrant. So $w(z)$ is fixed by $\Om$ through the background
+with no free EOS parameter; this is the $w(z)$ used throughout (Sec.~\ref{sec:results},
+Fig.~\ref{fig:eos}). Three $w_0$ values appear in this paper for \emph{different} objects:
+
+\begin{table}[t]
+\caption{The three $w_0$ values, for distinct objects. Only the canonical SEDE row is the model's
+prediction.}\label{tab:w0}
+\begin{ruledtabular}
+\small
+\begin{tabular}{@{}p{0.30\columnwidth}p{0.36\columnwidth}p{0.26\columnwidth}@{}}
+object & scaling & $w_0$ \\ \colrule
+canonical SEDE & $\rhoDE\propto H\fsat$ & $\approx-1.0$, crosses $-1$ \\
+$\lambda{=}1$ ``temperature-factor'' cousin & --- & $\approx-0.85$ \\
+area-law branch & $\rhoDE\propto H^2\fsat$ & $\approx-0.49$ (disfavoured) \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\noindent The $-0.85$ is a sanity check on the $\Om$-dependence (closed form
+$w_0=(4\Om/3-1)/(1-\Om)$) and the $-0.49$ is the $\Delta=0$ alternative the data disfavour
+(Secs.~\ref{sec:results},~\ref{sec:qg}).
+
+\subsection{The $H$-coupling $\lambda=1/2$ from the horizon's volume entropy}
+$\lambda$ fixes the magnitude's scaling with $H$, with no free parameter: the gravitational entropy is
+the coarse-grained entanglement entropy in the apparent-horizon \emph{volume}, $S_{\rm grav}\propto
+\VAH\propto\RAH^3$, i.e.\ a constant horizon entropy density. The conjugate ansatz
+($\rhoDE=\TAH\sgrav$, $\TAH\propto H$) then gives $\rhoDE\propto H\equiv H^{2\lambda}$ with
+$\lambda=1/2$. Equivalently, in the Barrow language $S=(A/A_0)^{1+\Delta/2}$ this is the maximal
+deformation $\Delta=1$ ($s_{\rm AH}\propto H^{1-\Delta}$, $\lambda=1-\Delta/2$): the volume law
+\emph{is} $\Delta=1$ ($A^{3/2}=R^3=V$). We keep $\Delta$ only as a falsifiable test of the volume law
+(Secs.~\ref{sec:results},~\ref{sec:pred}); Sec.~\ref{sec:qg} argues why the space-filling state is
+selected.
+
+\subsection{The sound speed $c_s^2=1$ from a background functional}
+SEDE's dark energy is background-growth-gated, which might suggest it clusters. We adopt the minimal
+smooth-dark-energy closure: $\fsat$ is a functional of the \emph{background} growth factor $D(z)$ (a
+function of cosmic time only), so $\rhoDE$ is homogeneous by construction and
+$\partial\fsat/\partial(\delta_{\rm m}^{\rm local})=0$, giving the standard metric-driven fluid
+response with $c_s^2=1$. This is a modelling closure, not a theorem; a full CLASS Boltzmann treatment
+confirms the resulting $f\sigma_8(z)$ matches this smooth-dark-energy growth to $0.1\%$ over
+$z=0.3$--$1.5$ (Sec.~\ref{sec:data}).
+
+\begin{table}[t]
+\caption{The fixed dark-sector inputs and their status. None is fitted to cosmological data.}
+\label{tab:inputs}
+\begin{ruledtabular}
+\small
+\begin{tabular}{@{}p{0.16\columnwidth}p{0.30\columnwidth}p{0.46\columnwidth}@{}}
+input & value & fixed by (status) \\ \colrule
+$\lambda$ ($H$-coupling) & $1/2$ & volume-law entropy $S_{\rm grav}\propto\VAH$ ($\equiv\Delta{=}1$) \\
+$w(z)$ (EOS) & $w_0\!\approx\!-1$, crosses $-1$ & flatness $+$ Eq.~\eqref{eq:friedmann} \\
+$\gamma$ (gate) & $\approx1.50$ & halo-binding-entropy prescription \\
+$c_s^2$ (sound speed) & $1$ & minimal smooth-DE closure (validated) \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig2_inputs}
+\caption{The two fixed dark-sector couplings. \emph{Left:} the $H$-coupling $\lambda=1-\Delta/2$
+versus the Barrow deformation; the volume-law endpoint $\Delta=1$ (the postulate of
+Sec.~\ref{sec:qg}) fixes $\lambda=1/2$. \emph{Right:} the structure coupling
+$\gamma=d\ln\Sigma_S/d\ln\sigma_8$ versus the entropy-weight exponent $p$; the
+binding-energy-into-the-horizon argument fixes $p=5/3$, giving $\gamma=1.50$. Neither is fitted.}
+\label{fig:inputs}
+\end{figure}
+
+\section{Data and methodology}\label{sec:data}
+
+\subsection{Data}
+We use a standard late-time-plus-compressed-CMB compilation, with both models fit to the identical data
+vector: \emph{BAO}---DESI~DR2 (galaxy, QSO, and Ly$\alpha$ tracers, $z=0.3$--$2.33$) as $D_M/r_d$ and
+$D_H/r_d$~\cite{DESI:2025zgx}; \emph{Supernovae}---Pantheon$+$ as the baseline, with DES-5YR and
+Union3 used independently for the robustness cross-check of Sec.~\ref{sec:results};
+\emph{Cosmic chronometers}---the Moresco~\textit{et al.} $H(z)$ compilation; \emph{Redshift-space
+distortions}---the Gold-2018 $f\sigma_8(z)$ compilation (with the data audit of App.~\ref{app:data}
+correcting a few mis-entered points); \emph{CMB}---the compressed Planck distance priors (shift
+parameter $R$, acoustic scale $l_A$, $\omega_b$), with the full \texttt{plik\_lite} likelihood as a
+cross-check; \emph{Local distance ladder}---the SH0ES $H_0$ prior; \emph{Out-of-sample}
+(Sec.~\ref{sec:results})---the pre-DESI eBOSS~DR16 full-shape BAO, held entirely out of the main fit.
+
+\subsection{CAMB-in-the-loop: a physical sound horizon}
+The single most important methodological point is that the sound horizon is \emph{not} a free
+parameter. Earlier exploratory fits that floated $r_d$ found large apparent preferences for SEDE; those
+did not survive a physical sound horizon. Here, at every point in the chain, $r_{\rm drag}$,
+$r_\star$, and $\theta_\star$ are computed self-consistently from the background by
+CAMB~\cite{Lewis:1999bs} (``CAMB-in-the-loop''), so BAO and CMB distances are tied to the same
+early-universe physics for both models. This makes the $\Delta\mathrm{DIC}$ of Sec.~\ref{sec:results} a
+like-for-like comparison rather than an artifact of a free standard ruler. The CMB enters as the
+compressed $(R,l_A)$ distances computed on the SEDE background through the same CAMB call. This
+captures the background distance to last scattering (and hence the early-dark-energy fraction that
+drives the $\Delta$ leverage of Sec.~\ref{sec:results}), but \emph{not} the full
+acoustic-peak/polarisation or lensing/ISW information; a full Planck/ACT likelihood is the natural next
+validation (Sec.~\ref{sec:disc}).
+
+\subsection{Inference and model comparison}
+Parameters are sampled by MCMC, marginalising over $\Om$, $H_0$ (with the SH0ES prior), $\omega_b$, the
+amplitude/$\sigma_8$, and $r_d$-determining physics---the \emph{same five} for SEDE and $\LCDM$, since
+SEDE's dark sector is fixed (Sec.~\ref{sec:inputs}). Model comparison uses the deviance information
+criterion (DIC), which penalises the effective number of parameters $p_D$; because $p_D$ is
+numerically close for the two models, $\Delta\mathrm{DIC}$ reduces essentially to the $\chi^2$
+difference. Significance is assessed not by $\Delta\mathrm{DIC}$ alone but by the false-preference
+calibration of Sec.~\ref{sec:results}.
+
+\subsection{Perturbations: smooth dark energy, validated by CLASS}
+SEDE's dark energy has $c_s^2=1$ and does not cluster (Sec.~\ref{sec:inputs}), so its growth is
+captured analytically by a smooth-dark-energy treatment. We validated this against a full Boltzmann
+computation: implemented in CLASS~\cite{Blas:2011rf} as a PPF fluid (which handles the $w=-1$
+crossing), the full-perturbation $f\sigma_8(z)$ matches the analytic background-only growth to $0.1\%$
+over $z=0.3$--$1.5$. The metric-level effects (CMB lensing $C_\ell^{\phi\phi}$, low-$\ell$ ISW,
+$S_8$) are all at the percent level relative to $\LCDM$.
+\section{Results}\label{sec:results}
+
+\subsection{The joint fit and the equation of state}
+In the marginalised joint analysis, SEDE is mildly preferred over $\LCDM$, with a deviance information
+criterion difference $\Delta\mathrm{DIC}\approx-2.9$ in SEDE's favour. Because the dark sector adds no
+fitted parameter (Sec.~\ref{sec:inputs}), the two models share the same five parameters and the same
+effective complexity, $p_D(\mathrm{SEDE})\approx p_D(\LCDM)$: the preference is in fit, not bought with
+parameters. The recovered background parameters are physical and close to $\LCDM$ ($\Om\approx0.30$,
+$H_0\approx68.8$, $\sigma_8\approx0.76$). The absolute $\chi^2/\mathrm{dof}\approx3$
+(the honest verdict below) reflects the heterogeneous, partly-compressed compilation and should
+\emph{not} be read as a goodness-of-fit probability---we use only matched-model differences
+($\Delta\mathrm{DIC}$, $\Delta\chi^2$) on the identical data vector. The canonical ($\lambda=1/2$)
+equation of state \emph{crosses} $w=-1$, with a present-day value near $-1$ and a dip to $\approx-1.08$
+by $z\approx2$, i.e.\ $(w_0,w_a)\approx(-0.98,-0.11)$---squarely in DESI~DR2's evolving-dark-energy
+quadrant, $\sim2.7\sigma$ from the $\LCDM$ point. The crossing is not imposed; it is where the
+expansion and horizon-entropy-production terms in $1+w$ balance (Sec.~\ref{sec:pred}).
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig3_datafit}
+\caption{Matched residual comparison (relative to $\LCDM$). \emph{Left:} DESI~DR2 BAO residuals in
+units of $\sigma$---the data (slate) with the SEDE prediction (red). \emph{Right:} Pantheon$+$ supernova
+residuals (binned) versus $\LCDM$, with the SEDE shape overplotted. SEDE and $\LCDM$ are close at
+present precision; the preference is a multi-probe aggregate (Sec.~\ref{sec:results}D), not one decisive
+measurement.}
+\label{fig:datafit}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig4_eos}
+\caption{The equation of state. \emph{Left:} the canonical SEDE fluid $w(z)$ (red) crosses $-1$ near
+$z\approx0$ and dips into the phantom regime ($\approx-1.08$ by $z\approx2$), the same sense as DESI~DR2's
+CPL fit (green) and distinct from $\LCDM$ (dashed). \emph{Right:} the $(w_0,w_a)$ plane---SEDE sits
+between $\LCDM$ and the DESI~DR2 $w_0w_a$CDM contour. The crossing is not imposed; it is where the
+expansion and horizon-entropy-production terms in $1+w$ balance (Sec.~\ref{sec:pred}).}
+\label{fig:eos}
+\end{figure}
+
+\subsection{Is the preference real, or model flexibility?}
+A $\Delta\mathrm{DIC}\approx-3$ is suggestive but not decisive, and a structure-gated model could in
+principle win by flexibility rather than by capturing a real signal. We test this with a
+\emph{false-preference calibration} (a parametric bootstrap). We generate mock datasets from a $\LCDM$
+truth---re-drawing \emph{every} probe self-consistently, crucially including the compressed CMB
+distances $(R,l_A)$ and the SH0ES prior, not just the late-time data---and refit both models to each
+mock. Under $\LCDM$ truth a flexible model would still tend to ``win''; SEDE does not: the null
+distribution of $\Delta\chi^2(\mathrm{SEDE}-\LCDM)$ has mean $+0.42$ (SEDE if anything fits
+$\LCDM$-truth mocks slightly \emph{worse}, consistent with having no spare flexibility). The real data
+give $\Delta\chi^2=-2.96$, beyond essentially all the null draws: in a 500-mock run,
+$p\approx0.002$ ($\sim3\sigma$), one mock in 500.
+
+We flag two honest caveats. First, an earlier version of this test held the CMB distances \emph{fixed}
+across mocks; that biased the null mean to $-2.87$ and gave $p\approx0.5$---the artifact that made the
+preference look like pure flexibility. Re-drawing the CMB self-consistently is the correct procedure
+and yields $p\approx0.002$. Second, the significance is CMB-distance-treatment-dependent: an
+independent sibling pipeline, with a different $l_A$/CAMB handling, obtains a milder real
+$\Delta\chi^2\approx-1.98$ and $p\approx0.025$ ($\sim2\sigma$). Both analyses agree the preference is
+not obviously attributable to model flexibility, and trace the $2\sigma$--$3\sigma$ spread to the
+CMB-distance engine rather than to SH0ES. We therefore quote a suggestive $\sim2$--$3\sigma$, pending
+independent reproduction.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig_F5_calibration}
+\caption{The false-preference calibration. Histogram: the null distribution of
+$\Delta\chi^2(\mathrm{SEDE}-\LCDM)$ from $\LCDM$-truth mocks (all probes, including the compressed CMB
+and SH0ES, re-drawn self-consistently), centred near zero (mean $+0.42$). Red line: the real data,
+$\Delta\chi^2=-2.96$, in the far tail. In the headline 500-mock run only one mock is as SEDE-preferring
+as the real data, $p\approx0.002$ ($\sim3\sigma$).}
+\label{fig:calib}
+\end{figure}
+
+\subsection{Out-of-sample check}
+A further check against a flexibility explanation is out-of-sample prediction. We trained SEDE on
+\emph{real pre-DESI data only} (eBOSS~DR16 full-shape BAO, LRG/QSO~\cite{eBOSS:2020yzd}) and used it to
+predict the later, held-out DESI~DR2 BAO: in this split SEDE matches the held-out DESI~DR2 trend better
+than $\LCDM$ by $\Delta\chi^2=-8.2$; a low-$z\to$high-$z$ split gives $-9.9$. A model winning purely by
+flexibility would tend to do \emph{worse} out of sample, so a pre-DESI-trained SEDE realisation
+predicting the DESI~DR2 trend is encouraging. The result should be independently reproduced before
+strong weight is placed on it.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig5_oos}
+\caption{Out-of-sample test. BAO residuals relative to $\LCDM$ (in $\sigma$) for the \emph{training}
+set (pre-DESI eBOSS~DR16, purple) and the \emph{held-out} DESI~DR2 data (slate), with the SEDE
+prediction (red) from parameters fit to eBOSS alone. SEDE, trained without ever seeing DESI, predicts
+the held-out DESI BAO better than $\LCDM$ ($\Delta\chi^2=-8.2$) in this split.}
+\label{fig:oos}
+\end{figure}
+
+\subsection{Robustness}
+The preference is not a single-dataset artifact. (i)~\emph{Supernova-set independence:}
+$\Delta\chi^2(\mathrm{SEDE}-\LCDM)$ is $-2.95/-2.87/-2.97$ with Pantheon$+$/DES-5YR/Union3
+respectively. (ii)~\emph{Leave-one-probe-out:} dropping any one probe leaves $\Delta\chi^2$ negative in
+every case (range $[-3.06,-2.16]$, mean $-2.64$)---a multi-probe consensus. (iii)~\emph{Code
+independence:} the SEDE expansion history reproduced with CLASS matches CAMB to $5\times10^{-5}$ in
+$r_{\rm drag}$ ($\ll0.2\%$). (iv)~\emph{Growth:} the full-Boltzmann $\gamma_{\rm growth}\approx0.55$
+confirms standard-GR dark energy, not modified gravity. (v)~\emph{Tracer-level robustness:} recent
+analyses argue the DESI~DR2 evolving-DE signal is driven mainly by the LRG1 ($z\approx0.51$) and LRG2
+($z\approx0.71$) BAO bins. Dropping these bins individually and together leaves SEDE's preference
+intact---$\Delta\chi^2=-3.27$ ($-$LRG1), $-2.76$ ($-$LRG2), and $-3.00$ with both removed (versus
+$-2.95$ for the full set). SEDE's mild preference is therefore \emph{not} the LRG1--2 artefact the
+steep-CPL signal is attributed to: the $\LCDM$-deviation measured by the early-vs-late
+$\mathrm{ratio}(\omega_m)$ metric drops from $2.6\sigma$ to $1.2\sigma$ when LRG1--2 are removed,
+whereas SEDE's $\Delta\chi^2$ is essentially unchanged---SEDE's preference and the LRG-driven steep-CPL
+deviation are \emph{different objects}.
+
+\subsection{Honest verdict}
+\begin{quote}
+SEDE is mildly preferred over $\LCDM$ ($\Delta\mathrm{DIC}\approx-2.9$; calibration $\sim2$--$3\sigma$);
+the preference is suggestive---not obviously attributable to model flexibility, and supported by a
+pre-DESI~$\to$~DESI out-of-sample check---and the model adds no fitted dark-energy parameter. But it is
+modest: both models have $\chi^2/\mathrm{dof}\approx3$, so SEDE is ``less wrong,'' not ``right.'' This
+is stronger than indistinguishable, short of established. DESI~DR3 and Euclid provide the sharp future
+test (Sec.~\ref{sec:pred}).
+\end{quote}
+
+\subsection{The deformation $\Delta$ from current data: a conditional diagnostic}
+The Barrow parameter $\Delta$ is a useful test axis: the volume postulate corresponds to $\Delta=1$,
+the area law to $\Delta=0$. SEDE's equation of state is CPL-degenerate in shape
+($\max|w-w_{\rm CPL}|=0.027$), so a diagnostic must use channels other than the EOS curvature. The
+numbers below are \emph{conditional diagnostics} (other parameters held at or near best fit, not a full
+marginalised likelihood with $\Delta$ varied); they indicate where current data sit, not a marginalised
+detection.
+
+\begin{table}[t]
+\caption{Conditional $\Delta$ diagnostics. The expansion-based channels prefer the volume endpoint
+$\Delta\approx1$ and disfavour the area law $\Delta=0$; the orthogonal growth channel is weak but
+consistent.}\label{tab:delta}
+\begin{ruledtabular}
+\begin{tabular}{lc}
+channel & $\hat\Delta$ (conditional) \\ \colrule
+CMB shift parameter $R$ (Planck) & $0.98\pm0.11$ \\
+lever arm: DESI BAO $+$ Ly$\alpha(z{=}2.33)+R$ & $1.03\pm0.11$ \\
+DESI~DR2 $(w_0,w_a)$ quadrant & $0.93/0.83/0.90$ \\
+growth $f\sigma_8$ (Gold-2018, orthogonal) & $0.0\pm0.61$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+These diagnostics prefer the volume endpoint ($\Delta\approx1$) and disfavour the area-law branch
+($\Delta=0$), consistent with the EOS argument of Sec.~\ref{sec:qg} (the area-law branch has
+$w_0=-0.49$ and an outsized early-DE fraction). The high apparent significance of the area-law
+disfavouring is a \emph{conditional} statement: the CMB and lever-arm channels share the high-$z$
+expansion, so their combination is an upper bound on the information, and marginalising over $\Om,H_0,
+r_d$ partly reabsorbs the signal. This is exactly why the joint, marginalised preference is only modest
+($\Delta\mathrm{DIC}\approx-3$), not overwhelming. \emph{Honest summary: current late-time data prefer
+the volume endpoint and disfavour the area-law branch, but a robust marginalised measurement of
+$\Delta$ awaits DESI~DR3 and Euclid (Sec.~\ref{sec:pred}).}
+
+\subsection{Relation to the post-DESI~DR2 literature}
+The DESI~DR2 BAO release~\cite{DESI:2025zgx} sharpened interest in evolving dark energy, with a
+preference for the $(w_0>-1,w_a<0)$ quadrant; the subsequent literature debates whether that signal is
+physical or an artefact of dataset combination, tracer selection, or supernova calibration (reviewed in
+Ref.~\cite{Turyshev:2026ewm}). Two threads bear on SEDE. First, \emph{robustness critiques} argue the
+steep signal reflects CMB/BAO/SN combination tension and is driven mainly by the LRG1--2 BAO bins. This
+\emph{helps} SEDE rather than threatening it: SEDE does not chase the steep $w_a$ (it sits
+$\sim2.7\sigma$ from the DESI CPL point), and its preference survives a tracer-level leave-one-out that
+removes exactly those bins ($\Delta\chi^2=-3.00$ with both dropped)---SEDE realises the conservative
+reading the critiques call for, not the fragile steep-CPL one. Second, \emph{reconstruction and
+mechanism papers}: model-agnostic Gaussian-process reconstructions place the $w=-1$ crossing at
+$z_{wt}\approx0.46$, versus SEDE's canonical $z\approx0.19$---a $\sim2.3\sigma$ offset that is a
+genuine future discriminator, not yet a tension given the broad reconstruction errors. Data-driven
+analyses read the evolving signal as a coupled dark sector; SEDE's horizon ledger is exactly such a
+coupling but with the interaction \emph{fixed} to the structure-growth rate, $c_s^2=1$, and
+instability-free (Sec.~\ref{sec:relations}). And the quintom programme rests on a no-go theorem (no
+single canonical field or perfect fluid crosses $w=-1$); SEDE crosses $w=-1$ effectively, as a smooth
+horizon fluid in the GW-safe EFT corner ($\alpha_T=\alpha_M=0$, $c_s^2=1$), and---unlike the two-field
+quintom whose late attractor is phantom-dominated---SEDE's future attractor is de Sitter
+($w\to-1^+$, $\fsat\to1$), so it does not predict a Big Rip.
+
+Two further points sharpen the placement. (a)~\emph{Model filter.} The DR2 status
+review~\cite{Turyshev:2026ewm} screens evolving-DE models by gravitational-wave propagation and
+perturbation stability, and stresses the CPL preference is sensitive to redshift-dependent SN
+calibration at the few$\times10^{-2}$\,mag level. SEDE passes by construction ($\alpha_T=0\Rightarrow
+c_{\rm GW}=c$; $c_s^2=1\Rightarrow$ gradient/ghost-stable), and its SN-set independence limits the
+calibration exposure. (b)~\emph{The $r_d$-independent shape test.} The calibration-free observable
+$F_{\rm AP}(z)\equiv D_M/D_H=(D_M/r_d)/(D_H/r_d)$ cancels the sound horizon and is $H_0$-independent,
+isolating $E(z)$. On the six DESI~DR2 tracer bins reporting both ratios, SEDE gives
+$\chi^2/n=0.96$---consistent with the data and indistinguishable from $\LCDM$ ($\Delta\chi^2=-0.14$)
+with \emph{no} reliance on $r_d$, $H_0$, the CMB sound horizon, or SN calibration. SEDE is thus a
+physical member of the post-DR2 evolving-DE family, distinguished by its mechanism (the
+growth--expansion lock, Sec.~\ref{sec:pred}), by passing the stability/GW filter, and by surviving the
+robustness and calibration-free tests the steep signal may not.
+\section{Predictions and falsifiability}\label{sec:pred}
+Because SEDE adds no fitted dark-energy parameter, it makes sharp predictions rather than fits. We
+\emph{pre-registered} these (a sha256-locked statement deposited ahead of the future data,
+App.~\ref{app:calib}) to forbid post-hoc tuning.
+
+\begin{table}[t]
+\caption{Pre-registered SEDE predictions and what each discriminates.}\label{tab:pred}
+\begin{ruledtabular}
+\begin{tabular}{lcl}
+quantity & SEDE & discriminates from \\ \colrule
+Barrow $\Delta$ & $1.0\pm0.09$ (forecast) & smooth horizon $\Delta=0$ \\
+$(w_0,w_a)$ & $(-0.98,-0.11)$ & $\LCDM$ point $(-1,0)$, $\sim2.7\sigma$ \\
+crossing $z$ & $z\approx0.19$ & GP recon.\ $z_{wt}\approx0.46$ \\
+$\sigma_8$ & $\approx0.76$ & (consistent with WL $S_8$) \\
+$\gamma_{\rm growth}$ & $\approx0.55$ & modified gravity ($\neq0.55$) \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\emph{An honest near-term tension.} The canonical model crosses $w=-1$ at $z\approx0.19$, more recently
+than the $\sim0.4$--$0.46$ favoured by post-DR2 Gaussian-process reconstructions---a $\sim2.3\sigma$
+offset on current (broad) reconstruction errors. We flag this as the one place recent data pull mildly
+against canonical SEDE, not a falsification: the crossing redshift is background-variant-dependent (the
+dynamical-temperature cousin crosses near $0.59$) and the reconstructions are not yet sharp.
+
+\emph{The sharp future test.} The discriminating observable is the \emph{amplitude} of the deformation
+$\Delta$, not the detailed shape of $w(z)$---the SEDE $w(z)$ is CPL-degenerate in shape to better than
+DR3 precision ($\max|w-w_{\rm CPL}|\approx0.027$), so a CPL fit cannot distinguish the mechanism;
+$\Delta$ can. A Fisher forecast in $(\Om,\Delta,\ln A\,r_d)$ gives $\sigma(\Delta)\approx0.115$ from
+DESI~DR3 alone, $0.133$ from Euclid, and $\sigma(\Delta)\approx0.087$ combined---an $\sim11\sigma$
+separation of the volume-law horizon ($\Delta=1$) from a smooth one ($\Delta=0$) under the Fisher
+assumptions.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig6_forecast}
+\caption{The sharp future test. A Fisher forecast of the separation of the volume-law horizon
+($\Delta=1$) from a smooth one ($\Delta=0$): DESI~DR3 reaches $8.7\sigma$, Euclid $7.5\sigma$, and the
+combination $\sigma(\Delta)\approx0.087$, an $\sim11\sigma$ separation.}
+\label{fig:forecast}
+\end{figure}
+
+\emph{The EOS as a meter of entropy production.} SEDE gives the equation of state a thermodynamic
+meaning: within the SEDE background ansatz, an exact identity
+\begin{equation}
+1+w_{\rm DE}=\tfrac13\!\left[2\lambda\varepsilon-\frac{d\ln\fsat}{d\ln a}\right]
+\label{eq:result13}
+\end{equation}
+splits $1+w$ into an expansion term (pushing $w>-1$) and a horizon-entropy-production term (pushing
+$w<-1$). The phantom crossing at $z\approx0.2$ is exactly where the two balance. Measuring $w(z)$ thus
+probes the effective activation rate of the horizon-fluid sector---the structure-growth-gated arrow of
+time made observable in the dark-energy equation of state.
+
+\emph{Structure sourcing without an entropy-amplitude problem.} One might object that a tiny
+structure-sourced entropy ($\varepsilon_{\rm dep}\approx\Om f_{\rm coll}\langle\sigma_v^2\rangle/c^2
+\approx1.5\times10^{-7}$ of the horizon entropy) cannot gate an order-unity dark-energy term. The
+objection is a category error: the activation coordinate is \emph{not} the deposited-entropy fraction
+$\Delta S_{\rm bind}/S_{\rm AH}$; it is the structure variance $x\equiv\sigma^2(z)/\sigma^2(0)=D^2(z)$,
+an order-unity quantity that is the \emph{argument} of the gate $\fsat$ (the Press--Schechter collapsed
+fraction~\cite{PressSchechter1974}). The deposited binding entropy enters elsewhere: it fixes the
+weight $\gamma\approx1.5$ (the kernel \emph{shape}) through $\Delta S=E_{\rm bind}/\TAH$. Hence
+$\Delta S_{\rm bind}/S_{\rm AH}\sim10^{-7}$ does \emph{not} imply $\fsat\sim10^{-7}$; nothing is
+amplified and nothing is tuned.
+
+\emph{The exact growth--expansion lock.} Write the gate as $\varphi\equiv\fsat(x)$, $x=D^2(z)$, with
+derived response
+\begin{equation}
+\chi_x\equiv\frac{\partial\varphi}{\partial x}=\frac{\gamma e^{-\gamma x}}{1-e^{-\gamma}},
+\label{eq:chix}
+\end{equation}
+an order-unity function with no free parameter once $\gamma$ is fixed ($\chi_x(0)\approx1.93$,
+$\chi_x(1)\approx0.43$). Continuity then gives, with $g\equiv d\ln D/d\ln a$,
+\begin{equation}
+1+w_{\rm DE}=\tfrac13\!\left[2\lambda\varepsilon-\frac{\chi_x}{\varphi}\,2x\,g\right],
+\label{eq:lock}
+\end{equation}
+verified against the direct fluid EOS to $3\times10^{-3}$. Because $\chi_x$, $x$, and $g$ are each
+derived or directly measured, the phantom term is \emph{growth data}, not a free function. This is the
+$w(z)\leftrightarrow\sigma^2(z)$ lock: given the measured expansion history, the dark-energy EOS and the
+structure-growth history are not independent. A kinematic $w(z)$---including a CPL fit reproducing
+SEDE's $w(z)$ to within DR3 precision---obeys no such relation. Expansion-only mimicry is therefore not
+enough: SEDE requires growth--expansion phase-locking (test P2 below).
+
+\emph{Optional: a near-critical response layer.} Mapping the variance coordinate $x$ to a microscopic
+deposited-entropy field $J\sim\varepsilon_{\rm dep}$ defines a second susceptibility
+$\chi_J\equiv\partial\varphi/\partial J=\chi_x(dx/dJ)\sim\varepsilon_{\rm dep}^{-1}\sim10^7$---merely the
+\emph{ratio} of two physical quantities, not a hidden fit parameter and not required for the background
+$w(z)$. If in addition the horizon sits near the area$\leftrightarrow$volume spinodal (landscape
+curvature $S''\to0$), then $\varphi$ is a near-critical order parameter---the \emph{Critical Horizon
+Response} (CHR) regime---with universal critical signatures, the same genre of physics as the
+elastic/memory response posited for the emergent dark sector~\cite{Verlinde:2016toy}. This
+near-criticality is the \emph{same statement} as the volume-law endpoint $\Delta\to1$ (the flat
+landscape \emph{is} the spinodal), which the generalised second law already drives
+(Sec.~\ref{sec:qg}); it adds no new fitted parameter. Whether it is generic or merely proximate is
+itself open, so the criticality-dependent predictions are a conditional, falsifiable layer.
+
+The predictions separate into two tiers---P2 is derived and parameter-free; P3--P5 require the
+critical-response closure:
+\begin{itemize}
+\item \textbf{P2 --- the $w\leftrightarrow\sigma^2$ lock} (derived; parameter-free): the phantom part of
+$w(z)$ equals $\tfrac13(\chi_x/\varphi)2xg$ reconstructed from growth data; no kinematic dark energy
+obeys it. The $E_G$ estimator realises a shared GR null: SEDE predicts no slip,
+$E_G(z)=\Om{,}_0/f(z)$, within $<1\%$ of $\LCDM$ and consistent with DESI-DR1$+$WL to $z\approx1$---a
+shared GR null, not a SEDE-vs-$\LCDM$ discriminator (the only discriminator remains $\Delta$).
+\item \textbf{P3 --- fluctuation enhancement} (conditional): a localised epoch of enhanced large-scale
+order-parameter activity at the transition $z_\ast\approx1.2$ ($\varphi=\tfrac12$), with no
+$\LCDM$/CPL analogue.
+\item \textbf{P4 --- the kill test} (conditional): a small, nonzero, redshift-localised environment
+dependence of growth/ISW peaked at $z_\ast\approx1.2$. The background DE stays smooth ($c_s^2=1$): the
+signal is a separate-universe (long-wavelength) response $\delta\fsat=\chi_x x\,b\,\delta_L$, not
+sub-horizon clustering. $\LCDM$ predicts exactly zero; clustering DE ($c_s^2<1$) predicts a broad,
+all-$z$, sub-horizon signal; CHR predicts a long-wavelength signal localised at $z_\ast\approx1.2$.
+\item \textbf{P5 --- critical slowing-down} (conditional): a small transient in $\gamma_{\rm
+growth}(z)$ localised at $z_\ast$, on a GR baseline $\gamma_{\rm growth}\approx0.55$.
+\end{itemize}
+
+The kill conditions are two-tiered. Failure of the lock (P2) would falsify the structure-sourcing
+mechanism itself---SEDE would then be an ordinary kinematic $w(z)$. Failure of the near-critical signal
+(P4) would falsify only the optional criticality layer, leaving the derived mechanism intact; a broad,
+sub-horizon P4-like signal would instead indicate clustering dark energy, not SEDE. Both tests are
+within reach of Euclid/Rubin weak-lensing tomography.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig_chr_experiments}
+\caption{The structure-sourcing mechanism and its optional near-critical (CHR) layer. \emph{Centre (the
+derived result):} the $w\leftrightarrow\sigma^2$ lock---the factorised EOS (dashed) versus the direct
+fluid EOS (solid), agreeing to $3\times10^{-3}$. \emph{Left (the conditional layer):} the order
+parameter $\varphi=\fsat$ and its activity $|d\varphi/d\ln a|$, peaking at $z_\ast\approx1.2$.
+\emph{Right:} the Buchert-closure check---the control field $x=D^2$ tracks the kinematical-backreaction
+proxy as a tight power law.}
+\label{fig:chr}
+\end{figure}
+
+\emph{Cross-horizon (speculative).} As a speculative extension---logically separate from the core
+model, which requires the deformation only in the dark-energy sector---one may ask whether $\Delta=1$ is
+universal. If so, black-hole entropy would be volume-law, $S_{\rm BH}\propto A^{3/2}\propto M^3$, a
+radical departure from Bekenstein--Hawking that would strongly suppress or qualitatively alter
+primordial-black-hole evaporation ($T_{\rm Barrow}/T_{\rm Hawking}\sim10^{-21}$). We do \emph{not} adopt
+this strong reading: SEDE is consistent with the standard area law for astrophysical black holes, with
+the deformation confined to the cosmological horizon fluid. A measured $\Delta_{\rm BH}=0$ alongside
+cosmic $\Delta=1$ would simply confirm the effect is dark-energy-sector-specific, and would not
+threaten the cosmological model.
+\section{Relation to other sectors}\label{sec:relations}
+
+\paragraph{Dark matter.} SEDE does not derive dark matter; it assumes the standard cold component. What
+it provides are falsifiable \emph{relationships}: the EOS is locked to $\Om$ through the fixed-point
+background, and the coincidence problem is reframed---the activation gate $\fsat(z)$ tracks the
+(dark-matter-dominated) growth of structure, so ``why now'' corresponds to $\fsat$ crossing $\approx0.5$
+near $z\approx1$, shortly before matter--DE equality. There is a principled route to more, flagged as a
+future direction, not a result: the same volume-law dark-sector entropy SEDE uses for dark \emph{energy}
+is the object from which Verlinde's emergent gravity~\cite{Verlinde:2016toy} derives apparent dark
+\emph{matter} (baryons displace the de Sitter volume-law entropy; the elastic/memory response reproduces
+flat rotation curves, the baryonic Tully--Fisher relation, and the MOND scale $a_0\sim cH_0$). If SEDE's
+$\Delta=1$ horizon entropy and Verlinde's volume-law de Sitter entropy are the same object, one
+volume-law postulate could in principle source both. We do \emph{not} adopt this: Verlinde's
+dark-matter proposal is contested (clusters, strong lensing, no covariant completion), and a first
+cross-check finds only an order-of-magnitude consistency---the single normalisation fixing
+$\rhoDE\sim\rhocr$ sets $a_0$ within an $O(1)$ factor of the observed value
+($(c\sqrt{\ODEz}H_0)/2\pi\approx0.73\,a_0$, $\sim25\%$ low). SEDE's data fits use standard cold dark
+matter throughout.
+
+\paragraph{Quantum and cross-field.} SEDE's horizon is fractal/volume-law while its \emph{bulk} is
+standard GR (holographic scope), so it predicts a deformed horizon \emph{without} a Lorentz-violating,
+foamy bulk. Two real datasets are consistent (they constrain bulk effects SEDE does not predict): the
+Fermi GRB~090510 31\,GeV photon excludes Planck-scale linear Lorentz violation, and the Fermilab
+Holometer's null result excludes bulk Planck-amplitude ``holographic noise.'' The CKN reading gives a
+gravitating-vacuum cutoff $\Lambda_{\rm UV}\approx4$\,meV at the dark-energy scale (Sec.~\ref{sec:qg}).
+We tested one cross-field extrapolation and it \emph{failed}: the cosmological $\delta=3/2$ does not
+transfer to galaxy-cluster velocity statistics---a real SDSS/Coma fit gives a Gaussian (Tsallis
+$q=1.01$, not the $q\approx1.5$ a naïve transfer would predict). We report this negative result
+plainly; the galaxy-dynamics link is the weakest cross-field claim.
+
+\paragraph{A contingent tension: cosmic birefringence.} Minimal SEDE predicts $\beta=0$, and this is
+\emph{derived}: birefringence needs a parity-odd coupling $(g/4)\varphi F\tilde F$, hence a
+pseudoscalar, which SEDE's parity-even thermodynamic scalar lacks---the same structural fact as
+$\alpha_T=0$ (GW170817-safety), so SEDE predicts $\beta=0$ and $c_T=c$ together. A nonzero isotropic
+rotation is reported (Planck $\sim0.30^\circ$; ACT~DR6 $0.215^\circ\pm0.074^\circ$,
+$2.9\sigma$~\cite{Eskilt:2022cff}), but its \emph{cosmic} nature is not established: the observable is
+the miscalibration-degenerate $\alpha+\beta$, Planck and ACT disagree by ${>}3\sigma$, and the
+$\beta\times$galaxy cross-correlation is null. The deeper issue is parsimony: a single axion can
+reproduce $\beta$, the phantom crossing, and the dark-matter abundance in one field. The clean
+discriminator is the pair $\{w\text{-crossing},\beta\}$: $(\text{crossing},\beta=0)$ selects SEDE,
+$(\text{crossing},\beta\neq0)$ the axion. We treat this as a real-but-contingent threat---expanded in
+the Sec.~\ref{sec:disc} red-team---not a present falsification.
+
+\paragraph{Where SEDE sits among dark-energy models.} SEDE is a thermodynamic model, but not outside the
+standard EFT of dark energy, and locating it there removes its main field-theoretic disadvantage. In the
+EFT of dark energy it occupies the \emph{safe corner}: the bulk is GR (holographic scope), so the
+Planck-mass run rate $\alpha_M=0$ ($\dot G/G=0$) and the tensor-speed excess $\alpha_T=0$---gravitational
+waves travel at $c$, so SEDE is GW170817-safe by construction. The dark energy is smooth with $c_s^2=1$,
+hence gradient-stable and non-clustering. SEDE is the $(\alpha_T=\alpha_M=0,c_s^2=1)$ point---the
+least-constrained region of EFT-of-DE---and a $k$-essence Lagrangian reproducing $\rhoDE(a)$ furnishes a
+field-theory representation if wanted. The structure coupling is also free of the two instability classes
+that afflict coupled dark energy: no gradient/ghost instability ($c_s^2=1>0$), and no early-time
+large-scale instability because the interaction fraction $\ODEz(z)|d\ln\varphi/d\ln a|\to0$ at high $z$
+(it peaks at $\approx0.38$ near $z\approx0.5$ and falls to $\sim10^{-10}$ by recombination). So two
+apparent disadvantages invert: against Horndeski SEDE is less constrained (GW-safe), and against
+interacting dark energy it is more stable.
+
+\begin{table*}[t]
+\caption{Where SEDE sits among dark-energy frameworks: what it shares or borrows, and its net
+position (including honest limits).}\label{tab:frameworks}
+\begin{ruledtabular}
+\footnotesize
+\begin{tabular}{@{}p{0.15\textwidth}p{0.37\textwidth}p{0.43\textwidth}@{}}
+framework & what SEDE shares/borrows & net position \\ \colrule
+$\LCDM$ (Planck) & empirical benchmark & honest limit: far less established---DR3/Euclid decides \\
+quintessence (Ratra--Peebles) & dynamical DE; tracker/attractor crossing & structure-locked $w(z)$, non-tuned $-1$ crossing \\
+CKN bound & UV--IR bound fixes the DE scale & turns it into a cosmology; needs the volume-law form on top \\
+Li holographic DE & holographic DE with a horizon cutoff & uses the \emph{apparent} horizon (no causality issue); volume-law radical \\
+Hu--Sawicki $f(R)$ & viable late-time acceleration & keeps GR ($\alpha_M{=}\alpha_T{=}0$): no screening/GW tension; less mature \\
+CPL & data language; $w(z)$ CPL-degenerate in shape & adds the growth--expansion lock CPL lacks; not a neutral fit \\
+early dark energy & --- & honest limit: does not address $H_0$ (out of scope, $r_d$-pinned) \\
+Jacobson (1995) & Clausius $\to$ Friedmann; $\rhoDE=T\!\cdot\!s$ & entropy-law change confined to the DE fluid, not gravity \\
+Horndeski / EFT-of-DE & the $\alpha$-function language & sits at the GW170817-safe corner; less constrained \\
+Verlinde (2016) & volume-law de Sitter entropy; elastic response & independent motivation; $a_0\sim cH_0$ consistent at $O(1)$ \\
+interacting DE & the dark-sector energy-exchange ledger & coupling fixed to growth, $c_s^2{=}1$, off at high $z$: instability-free \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+The genuinely irreducible disadvantages reduce to two: SEDE is empirically younger than $\LCDM$ (the
+decisive tests are DR3/Euclid), and it rests on the one volume-law postulate (Sec.~\ref{sec:qg}) that
+motivation---Barrow, the GSL, CKN, Verlinde---supports but does not derive.
+
+\paragraph{Symmetry origin of the null predictions.} SEDE's many ``null'' results follow from a single
+structural condition: the dark sector adds no symmetry-breaking operator to the GR$+$Standard-Model
+effective action; it is a parity-even scalar minimally coupled through $T_{\mu\nu}$. Then $\beta=0$ (EM
+parity), $\alpha_T=0$, $c_T=c$ (2-derivative diffeomorphism-invariant gravity), $\alpha_M=0$, $\dot
+G/G=0$ (minimal metric coupling), and no Lorentz violation (bulk Lorentz invariance) are all forced at
+once---one principle, not a list. The de Sitter endpoints add a fifth: $\fsat\to1\Rightarrow$ a
+maximally-symmetric de Sitter phase $\Rightarrow w=-1$ by symmetry. The honest limit: this protects
+SEDE's \emph{safety}, not its \emph{content}---the load-bearing inputs (the volume law $\Delta=1$, the
+coupling $\gamma\approx1.5$, the crossing redshift) are not symmetry-derivable.
+
+\subsection{Relation to information dark energy and other structure-sourced models}
+The idea that dark energy is \emph{sourced by the entropy/information produced as structure forms} is
+\emph{not original to SEDE}, and we state the priority plainly. It is due to M.~P.~Gough, in a sustained
+but under-cited programme dating (from a NASA-ADS author search) to 2006--2008~\cite{Gough2008},
+developed through \emph{Holographic Dark Information Energy}~\cite{Gough:2011eq} to a recent
+observational analysis~\cite{Gough2025} that fits the stellar-mass-density history to the dark-energy
+EOS, finding $\rhoDE\propto\mathrm{SMD}(a)^p$ with $p\approx0.5$. In Gough's model dark energy is the
+Landauer energy of the information of star-heated gas. SEDE shares his central physics---structure's
+entropy \emph{is} dark energy, with a self-regulating feedback addressing the coincidence
+problem---and we credit it as the priority.
+
+What distinguishes SEDE is the \emph{mechanism and a testable consequence}. (i)~\emph{Mechanism:} Gough
+uses the thermal/information entropy of hot \emph{baryons} (in the bulk); SEDE uses the
+\emph{gravitational} binding entropy of bound structure deposited on the \emph{apparent horizon}
+($\rhoDE=\TAH\sgrav$, Barrow volume-law $\Delta=1$). (ii)~\emph{Prediction:} the two are not
+degenerate. SEDE's driver is the gravitational growth factor $D(z)$ (dark matter), Gough's the baryonic
+stellar-mass density $\mathrm{SMD}(z)$ (star formation); the two dark-energy histories agree to
+$\lesssim6\%$ for $z\lesssim0.6$ (where supernova data are strongest) but diverge by up to $\sim50\%$ by
+$z=3$, SEDE staying flatter. (iii)~SEDE adds a parameter-free dark sector and a $w$-crossing rather than
+a fitted CPL. A clean observational separation asks whether dark energy tracks $D(z)$ (gravity) or
+$\mathrm{SMD}(z)$ (stars), with the high-$z$ dark-energy fraction (DESI Ly$\alpha$, future surveys) as
+the lever. A systematic priority pass over both INSPIRE-HEP and NASA~ADS returns no precedent for SEDE's
+specific construction---``dark energy $=$ gravitational binding entropy of bound structure on the
+apparent horizon.'' Running Gough's model through our identical CAMB-marginalised pipeline (its
+$\rhoDE\propto\mathrm{SMD}^{0.5}$ as a $w(a)$ table), both are viable, with SEDE modestly preferred
+($\Delta\mathrm{DIC}\approx-3.3$ vs Gough's $\approx-0.45$), Gough's fit favouring a higher $H_0$.
+\section{The quantum-gravity underpinning}\label{sec:qg}
+The energy-conservation account of Secs.~\ref{sec:model}--\ref{sec:inputs} took two horizon properties
+as given: the \emph{magnitude}, $\rhoDE\sim\rhocr$ rather than the QFT vacuum's $\Mpl^4$, and the
+\emph{$H$-scaling} $\lambda=1/2$, which follows from the horizon entropy being volume-law
+($S_{\rm grav}\propto\VAH$) with no deformation parameter. This section supplies their
+quantum-gravitational basis; a reader content to take the two scales as inputs may treat it as optional.
+Throughout, the Barrow parameter $\Delta$ appears only to label the area-to-volume interpolation
+($S\propto A^{1+\Delta/2}$: $\Delta=0$ area-law, $\Delta=1\Leftrightarrow$ volume-law) and as the
+falsifiable test of the volume postulate; it is not an input.
+
+\subsection{Why volume-law, not area-law}
+The dark-sector entropy is the coarse-grained entanglement entropy contained in the apparent-horizon
+\emph{volume}, $S_{\rm grav}\propto\VAH\propto\RAH^3$---the Barrow endpoint $\Delta=1$. Why the volume
+law, rather than Bekenstein--Hawking area? Six considerations---none a microscopic proof, but jointly
+motivating the volume endpoint:
+\begin{enumerate}
+\item \emph{Geometric ceiling.} The horizon's fractal dimension is $d_H=2+\Delta$, capped at the
+space-filling value $d_H=3$ for a two-surface in three-space. Since $\Delta=2/(d-1)$, the case $d=3$
+gives $\Delta=1$: a clean endpoint, not an awkward intermediate.
+\item \emph{Thermodynamic floor / GSL.} The horizon entropy is monotone toward the volume endpoint, and
+because $\rhoDE=T\!\cdot\!s$ makes the free energy $F=E-TS$ vanish identically, entropy itself is the
+governing potential; the generalised second law selects the volume-law maximum. Volume-law scaling is
+the signature of a thermalised, maximally-scrambled state.
+\item \emph{The holographic bound fixes the scale, not the form.} The CKN bound pins the magnitude but
+not the exponent---its own state count gives a sub-area-law. The volume law is a statement about the
+horizon's quantum \emph{state} (typical/thermalised), which the energy bound cannot supply.
+\item \emph{A driven steady state.} The horizon need not self-thermalise---its scrambling time
+($\sim\ln S/H\approx280/H$) far exceeds its age. The structure-growth gate drives it off the ground
+state; with a scrambling-limited relaxation rate, the volume-law state is maintained as a
+non-equilibrium steady state---a fixed point of SEDE's own dynamics.
+\item \emph{A roughening universality class} (developed with the sibling collaboration). Modelling the
+horizon as a stochastic growing surface, the Edwards--Wilkinson (linear) class flows to the volume
+endpoint and corresponds to SEDE's purely-entropic $F=0$ condition. The most speculative route,
+included only as motivation.
+\item \emph{An independent emergent-gravity proposal.} In Verlinde's programme~\cite{Verlinde:2016toy}
+the de Sitter vacuum carries a volume-law contribution to its entanglement entropy---precisely the
+Barrow endpoint of our family. A second, independently-motivated route to a volume-law entropy makes
+the postulate less \emph{ad hoc}.
+\end{enumerate}
+Finally, the area-law branch is disfavoured directly: saturating the CKN bound is algebraically the
+area-law case $\Delta=0$, whose EOS ($w_0=-0.49$) and large early-dark-energy fraction are disfavoured
+in the conditional diagnostics of Sec.~\ref{sec:results}.
+
+\subsection{Why $\rhoDE\sim\rhocr$: the CKN bound and the vacuum-energy scale}
+The deformation fixes the scaling with $H$ but not the magnitude. The magnitude comes from the
+Cohen--Kaplan--Nelson holographic energy bound~\cite{Cohen:1998zx}: an effective field theory in a
+region of size $L$ cannot hold more energy than a black hole of that size, $\rho L^3\lesssim\Mpl^2 L$.
+With the IR cutoff at the cosmic horizon, $L=c/H$,
+\begin{equation}
+\rhoDE\lesssim\Mpl^2H^2\sim\rhocr\quad\Rightarrow\quad\Omega_{\rm DE}\sim\mathcal{O}(1).
+\label{eq:ckn}
+\end{equation}
+The naïve QFT vacuum, $\rho\sim\Mpl^4$, overshoots this by $\rho_P/\rhocr\sim10^{122}$---the
+cosmological-constant problem. SEDE never invokes the QFT vacuum: dark energy is the horizon's conjugate
+thermal energy density, and CKN supplies the horizon-scale upper bound. This is a bound, not an equality:
+the present amplitude is fixed by spatial flatness ($\ODEz=1-\Om$), in the same bookkeeping sense that
+$\LCDM$ fixes $\Omega_{\Lambda0}$. The same bound, read as a UV--IR relation, gives a gravitating-vacuum
+cutoff $\Lambda_{\rm UV}=(\Mpl H_0)^{1/2}\approx4$\,meV---numerically the observed dark-energy scale.
+
+\subsection{The seam, BBN-safety, and the holographic scope}
+A naïve microscopic volume-law entropy density would be Planckian, so a naïve $\rhoDE=T\!\cdot\!(S_{\rm
+vol}/V)$ would overshoot $\rhocr$ by $(\Mpl/H)^\Delta\sim10^{61}$---the square root of the $10^{122}$
+hierarchy. The same factor controls three apparently separate issues---this seam, the BBN bound on a
+Barrow-modified Friedmann equation, and the modified-gravity-vs-holographic fork---which are one object.
+The resolution is the holographic-DE scope of Sec.~\ref{sec:model}: the deformation acts only on the
+dark-energy fluid (magnitude from CKN, scaling from Barrow), not on the gravitational sector. The
+early-universe expansion is then exactly standard ($\Delta N_{\rm eff}=\Delta Y_p=0$; BBN-safe), and the
+naïve $T\!\cdot\!(S/V)$ is precisely the modified-gravity path the scope forbids. This is the
+load-bearing assumption of the model. In the modified-gravity reading, BBN forces
+$\Delta\lesssim1.4\times10^{-4}$~\cite{Barrow:2020tzx}, which read literally would exclude SEDE's
+$\Delta=1$. Those bounds do \emph{not} apply: SEDE keeps standard gravity and lets the volume-law
+entropy act only on the dark-energy fluid, so there is no extra Friedmann term and $\Delta$ is
+unconstrained by them. The headline $\Delta=1$ rests on this single scope choice---legitimate and
+standard (it \emph{is} the holographic-dark-energy framework), but not free.
+
+\subsection{The one irreducible postulate}
+\begin{quote}
+\textbf{Postulate (volume-law horizon).} The cosmic apparent horizon carries the coarse-grained
+\emph{entanglement} entropy of its \emph{volume}, $S_{\rm grav}\propto\VAH\propto R^3$---a constant
+horizon entropy density, i.e.\ a thermalised, volume-law (non-extensive) state---rather than the
+Bekenstein--Hawking area law.
+\end{quote}
+The results above are bounds, consistency arguments, or motivations \emph{given} this postulate; the
+postulate itself is not derived from a microscopic theory of quantum gravity. Sec.~\ref{sec:qg}A
+\emph{reduces} it (CKN fixes the scale, so the only open content is the entanglement \emph{state}),
+\emph{motivates} it, and shows the area-law branch is disfavoured---but a microscopic state count
+delivering the volume law remains the model's single open foundational item. The model carries no
+fitted deformation parameter: $\Delta$ is the falsifiable test of this postulate. We do not claim to
+have derived quantum gravity; we claim to have reduced its dark-energy content to one testable statement
+and removed it as a fitted parameter. A volume-law \emph{entanglement} entropy is at least not exotic in
+cosmological field theory: it grows and saturates after a de Sitter$\to$flat
+transition~\cite{Khlebnikov:2019wbk}. We cite such results only to establish genre and plausibility---they
+concern field \emph{subregions}, not the cosmic-\emph{horizon} entropy, and do not derive the postulate.
+
+\subsection{Two halves of the postulate: the state (SYK) and the counting (causal sets)}
+``Volume-law'' conflates two claims of different status. \emph{(i) The state:} are the horizon dof
+maximally entangled (thermal) or in a low-entanglement ground state? \emph{(ii) The counting:} does the
+number of horizon dof grow as the area, $N\propto R^{d-2}$, or the volume, $N\propto R^{d-1}$? Since
+$S\sim(\text{state factor})\times N$, the deformation $\Delta$ is fixed by the \emph{counting}; the state
+only sets whether the prefactor is maximal. SEDE's postulate is the counting claim.
+
+\emph{The state half is settled, and not peculiar to SEDE.} Maximal scrambling has a precise meaning in
+the Sachdev--Ye--Kitaev model, the canonical black-hole-dual system that saturates the
+Maldacena--Shenker--Stanford chaos bound $\lambda_L\le2\pi T$~\cite{Maldacena:2015waa}. Exact
+diagonalisation of Majorana SYK (Fig.~\ref{fig:syk}) confirms its dof are maximally entangled: the gap
+ratio reproduces Wigner--Dyson statistics with the correct $N$-mod-8 class~\cite{Cotler:2016fpe},
+eigenstates saturate the Page value~\cite{Page:1993df,Page:1993wv}, and the OTOC scrambles
+completely---while an integrable control does none of these. But this \emph{does not fix} $\Delta$: a
+black hole is a maximal scrambler yet area-law ($S=A/4$, $\Delta=0$). SYK, being all-to-all
+(geometry-free), cannot even pose the counting question.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{fig_syk_scrambling}
+\caption{SYK as the horizon scrambler ($q=4$ chaotic vs $q=2$ integrable control). \emph{Left:} gap
+ratio climbs through the $N$-mod-8 RMT classes---the certificate of maximal chaos. \emph{Centre:}
+eigenstate entanglement saturates the Page value. \emph{Right:} the OTOC scrambles completely
+($C\to2$). This fixes the \emph{state}, not the counting.}
+\label{fig:syk}
+\end{figure}
+
+\emph{The counting half is where SEDE lives.} In causal-set quantum gravity both scalings appear: the
+bulk element count of a radius-$R$ region scales as spatial \emph{volume} (measured exponent
+$1.92\approx2$ in 2$+$1D $\Rightarrow R^3\Rightarrow\Delta=1$), while the count of causal \emph{links}
+straddling the horizon scales as \emph{area} ($0.98\approx1\Rightarrow R^2\Rightarrow\Delta=0$).
+Crucially the canonical horizon-entropy object---the link count, which recovers
+Bekenstein--Hawking---is the area one. Even in the framework most hospitable to volume-counting,
+area-law is the default, and SEDE's $\Delta=1$ is the specific, non-default identification of horizon
+entropy with the \emph{bulk} count. The one open item is therefore not about thermalisation (settled,
+shared with area-law black holes) but a pure dof-counting statement: the cosmic horizon's entropy counts
+its bulk ($N\propto R^3\Leftrightarrow d_H=3$) rather than its boundary (links) degrees of freedom.
+
+\subsection{Is the volume count allowed, realisable, and selected?}
+We ask the three questions that decide the postulate's status, each with a numerical probe.
+
+\begin{table*}[t]
+\caption{Status of the volume-counting postulate against three deciders. It is allowed and realisable,
+but not selected by the frameworks we can compute in---reducing it to a well-posed open question of dS
+holography plus the empirical $\Delta$.}\label{tab:counting}
+\begin{ruledtabular}
+\footnotesize
+\begin{tabular}{@{}p{0.13\textwidth}p{0.28\textwidth}p{0.54\textwidth}@{}}
+question & probe & result \\ \colrule
+\textbf{Allowed?} (entropy bounds) & volume entropy vs smooth-area bounds & $S\propto R^3$ overshoots
+$A/4$ by $\propto R$; consistent \emph{only} as a genuine $d_H{=}3$ fractal horizon (then
+$S=A_{\rm fractal}/4$ saturates exactly) \\
+\textbf{Selected?} (quantum gravity) & causal-set sprinkle, Minkowski \emph{and} dS & both scalings
+present; the canonical horizon object (causal \emph{links}) is \emph{area}, in flat space and identically
+in dS. Volume is not the default \\
+\textbf{Realisable?} (holographic code) & Ryu--Takayanagi min-cut, local vs nonlocal & local
+connectivity $\Rightarrow$ area (exp.\ 1.0); \emph{nonlocal (expander)} $\Rightarrow$ volume (exp.\ 1.9).
+$\Delta{=}1$ realisable, needs nonlocal horizon connectivity \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+The pattern is consistent: volume-counting is \emph{allowed} (the bounds neither forbid nor derive it,
+they restate it), \emph{realisable} (a nonlocal holographic code produces $S\propto R^{d-1}$), but
+\emph{not selected} (causal sets default to the area count for the canonical horizon object, and a black
+hole is area-law). No consistency argument available to us derives the volume count; equally, none
+excludes it. The counting question reduces to two deciders. Theoretically it is precisely \emph{``is the
+Hilbert-space dimension of the de Sitter static patch $e^{\rm Area/4}$ or $e^{\rm Volume}$?''}---a
+frontier problem a complete dS holography (e.g.\ the double-scaled-SYK programme for the static patch)
+would settle. Empirically it is $\Delta$ itself: $\Delta=0$ is already disfavoured
+(Sec.~\ref{sec:results}), and DESI~DR3$+$Euclid will measure $\Delta$ to $\sim0.09$. SEDE's postulate is
+thus not arbitrary but a consistent, realisable bet on a well-posed open question of quantum gravity,
+with the current empirical lean in its favour and a decisive test imminent.
+\section{Discussion: open problems and honest assessment}\label{sec:disc}
+
+\paragraph{The one open item.} Every dark-sector input is fixed by a stated choice
+(Sec.~\ref{sec:inputs}) given the single postulate that the horizon is volume-law-entangled
+(Sec.~\ref{sec:qg}). That postulate is motivated by gravity's non-extensivity and the second law but is
+not derived from a microscopic state count; it is the model's one irreducible input, and we have argued
+it is not closable by reframing (canonical vs microcanonical accounting gives either area-law
+$\lambda=1$ or Planckian-volume $\lambda=1/2$, never both for free)---a genuine, and falsifiable, open
+problem.
+
+\paragraph{Scope and tensions.} $H_0$ is out of SEDE's scope (it is $r_d$-pinned). The
+structure-sourcing \emph{mechanism}---the defining claim that $\fsat$ tracks growth---is only weakly
+confirmed: a geometry-vs-structure consistency test tracks at $z<1$ but is RSD-limited at $z>1$ and
+remains inconclusive pending Euclid/LSST weak-lensing tomography. We separated this mechanism into a
+derived, parameter-free part (the growth--expansion lock P2, Sec.~\ref{sec:pred}) and an optional
+near-critical layer (the kill test P4); both are testable with that data. The honest framing: SEDE's
+phenomenology ($w$ crossing $-1$, the volume-law endpoint) is mildly favoured with an encouraging
+out-of-sample check, but its distinctive mechanism is the unconfirmed frontier.
+
+\paragraph{A red-team of the recent literature.} We list the strongest recent results that could damage
+SEDE.
+\begin{enumerate}
+\item \emph{Holographic DE disfavoured by full CMB.} Wu \textit{et al.}~\cite{Wu:2025vfs} find
+holographic and Ricci DE disfavoured by full ACT~DR6$+$DESI through an early-vs-late tension that
+compressed $(R,l_A)$ priors hide. We tested it: against the full Planck \texttt{plik\_lite}
+($\theta_\star$-matched) SEDE's $w(z)$ gives $\Delta\chi^2_{\rm CMB}=-0.50$ vs $\LCDM$, and against the
+official ACT~DR6 CMB-lensing likelihood $\Delta\chi^2_{\rm ACT\text{-}lens}=-0.32$. Both
+$|\Delta\chi^2|<1$: SEDE does not inherit the standard-HDE tension, because it has \emph{less} early
+dark energy than $\LCDM$ ($\Omega_{\rm DE}(z{=}3)\approx0.035<0.040$), not the runaway high-$z$
+behaviour that breaks original HDE.
+\item \emph{Cosmic birefringence.} SEDE predicts $\beta=0$; a nonzero rotation is reported (ACT~DR6
+$2.9\sigma$~\cite{Eskilt:2022cff}). \emph{If} cosmic and dark-energy-sourced, a single axion explains
+$\beta+$acceleration---a parsimony threat. But the cosmic nature is not established (the measurement is
+$\alpha+\beta$, Planck and ACT disagree by ${>}3\sigma$, the $\beta\times$LSS correlation is null at
+SEDE's predicted zero). A contingent threat, not a present falsification; $\beta=0$ is symmetry-derived
+and tied to GW-safety, so a confirmed cosmic $\beta$ would also predict GW parity violation.
+\item \emph{The DDE signal as a low-$z$ SN systematic.} Huang, Cai \& Wang~\cite{Huang:2025som} show the
+DESI preference is biased by an external low-$z$ SN sample in DESY5 and drops to ${<}2\sigma$ once
+corrected. The bias is DESY5-specific; SEDE's headline uses Pantheon$+$, and its leave-one-probe-out
+drops supernovae entirely and stays preferred ($\Delta\chi^2=-2.47$). SEDE is not SN-driven---but if the
+field's evolving-DE evidence softens, SEDE's context erodes.
+\item \emph{The nearest Barrow-HDE fit prefers $\Delta\ll1$.} Luciano, Paliathanasis \&
+Saridakis~\cite{Luciano:2025elo} fit standard Barrow-HDE to DESI~DR2$+$SN$+$CC and obtain
+$\Delta<0.47$--$0.54$, which read literally disfavours $\Delta=1$. But their $\Delta$ enters the HDE
+density directly, whereas SEDE's enters via $\lambda=1-\Delta/2$ \emph{and} the structure gate, which
+decouples $\Delta$ from the EOS amplitude; in SEDE's own construction $\Delta=1$ is data-preferred over
+$\Delta=0$. The bound constrains a sibling model, not SEDE.
+\end{enumerate}
+Net: the two threats targeting the model itself (full-CMB tension; the Barrow-$\Delta$ bound) are
+answered by direct tests or a stated model distinction; the two targeting the context (birefringence;
+the low-$z$ SN systematic) are real and partially outside SEDE's control.
+
+\paragraph{Evidential status.} SEDE is a falsifiable, fixed-parameter, $\Lambda$-free alternative to
+$\LCDM$, mildly preferred (suggestive $\sim2$--$3\sigma$) with an encouraging out-of-sample check,
+resting on one open postulate and a few stated theoretical choices. It is stronger than
+``indistinguishable from $\LCDM$'' and weaker than ``established.'' Its value is twofold: a physical
+story (no fine-tuned $\Lambda$, $w(z)$ from $\Om$, the coincidence reframed) and a decidable prediction
+(the volume law, $\Delta=1$). The data, not the theory, will settle it.
+
+\section{Conclusions}\label{sec:concl}
+We have presented Structural Entropy Dark Energy: a fixed-parameter dark-energy model in which dark
+energy is identified with the conjugate thermal energy density of a volume-law-entangled cosmic horizon
+and activated through a structure-growth gate. The model is a single Friedmann fixed-point equation with
+no fitted dark-sector parameter---$\lambda$, $w(z)$, $\gamma$, and $c_s^2$ are each fixed by a stated
+theoretical choice rather than tuned---that replaces the cosmological constant by a structure-gated,
+horizon-coupled term. It addresses the vacuum-energy-scale problem (the scale is the CKN holographic
+bound, normalised by flatness, not the QFT vacuum) and reframes the coincidence problem (the activation
+gate tracks the late-time maturation of structure growth). In a marginalised, CAMB-in-the-loop joint
+analysis it is mildly preferred over $\LCDM$ ($\Delta\mathrm{DIC}\approx-2.9$); the preference is
+suggestive (calibration $\sim2$--$3\sigma$, not obviously flexibility) with an encouraging
+pre-DESI~$\to$~DESI out-of-sample check, and its equation of state crosses $-1$ in DESI's evolving-DE
+quadrant. Its quantum-gravitational content reduces to one falsifiable postulate---a volume-law horizon
+entropy. The sharp future test is near: under the stated Fisher assumptions, DESI~DR3 and Euclid could
+constrain the effective deformation $\Delta$ to $\sigma\approx0.09$, separating SEDE's volume-law
+horizon from a smooth one at $\sim11\sigma$. SEDE is suggestive, not established---and, crucially, it is
+decidable.
+
+\begin{acknowledgments}
+We acknowledge the use of public data from the DESI, Planck, ACT, Pantheon$+$, DES, and eBOSS
+collaborations, and the CAMB and CLASS Boltzmann codes.
+\end{acknowledgments}
+
+\paragraph*{Code and data availability.} All code, data vectors, and analysis pipelines are publicly
+available at \url{https://github.com/spsingularity/SEDE}. A single entry point, \texttt{reproduce\_all.py},
+regenerates every number and figure from staged drivers; the model and likelihood live in the
+\texttt{sede/} package, and the verification suite checks the quoted results numerically. The
+observational inputs are standard public datasets, retrieved via documented loaders. A tagged release
+with an archival DOI will accompany journal submission.
+
+\paragraph*{Use of AI tools.} Artificial-intelligence tools (large language models) were used to assist
+with drafting and editing the manuscript, with developing and cross-checking the analysis code, and with
+literature searches. The author conceived the model, directed and independently verified all analyses,
+and takes full responsibility for the content, including all derivations, results, and conclusions. No
+AI tool is an author.
+% ===================================================================================
+
+\appendix
+
+\section{Key results, prescriptions, and assumptions}\label{app:results}
+This appendix documents the load-bearing items by their epistemic status---one defining ansatz (A.1),
+supporting derivations (A.2, A.4, A.5), a fixed prescription (A.3), and a motivated postulate (A.6). We
+work in units $c=\hbar=k_B=1$ and write $8\pi G=1/\Mpl^2$.
+
+\subsection{The conjugate horizon-fluid ansatz}
+SEDE \emph{identifies} the dark-energy density with the conjugate energy of the horizon entropy,
+$\rhoDE=\TAH\sgrav\fsat$. The Clausius relation supplies the dynamics; the absolute density $\rho=Ts$ is
+the model's defining \emph{ansatz}. At the flat-FRW apparent horizon $\RAH=1/H$, Hayward's first law
+$\delta E=\TAH dS_{\rm AH}+W\delta V$ applied to a shell crossing the horizon gives the Clausius
+relation $(\rho+p)HV=\TAH\dot S_{\rm AH}$ (standard, dynamical). The covariant entropy
+bound~\cite{Bousso:2002ju} $S_{\rm matter}\le A/(4l_P^2)=S_{\rm AH}$ motivates a bounded $\fsat\in[0,1]$.
+SEDE then posits
+\begin{equation}
+\rhoDE\equiv\TAH s_0\fsat=\frac{H}{2\pi}s_0\fsat\propto H\fsat,
+\end{equation}
+and fixing $s_0$ by flatness [$\rhoDE(0)=\ODEz\rho_{\rm crit,0}$, $\fsat(0)=1$] gives
+$\rhoDE(z)=\ODEz\rho_{\rm crit,0}E(z)\fsat(z)$---the volume-law ($\lambda=1/2$) scaling of
+Eq.~\eqref{eq:friedmann}, not the area-law $H^2$.
+
+\subsection{The structure gate $\fsat(z)$}
+Modelling the activation gate through a normalised growth-weighted deposition kernel $K\propto
+(d\sigma_8^2/dt)e^{-\gamma\sigma_8^2/\sigma_8^2(0)}$ and taking $\fsat$ as its normalised cumulative,
+the Hubble factors cancel and with $u\equiv\sigma_8^2/\sigma_8^2(0)$ running to $x(z)=D^2(z)$,
+\begin{equation}
+\fsat(z)=\frac{\int_0^{x(z)}e^{-\gamma u}du}{\int_0^1 e^{-\gamma u}du}
+=\frac{1-e^{-\gamma x(z)}}{1-e^{-\gamma}},\quad x(z)=D^2(z),
+\end{equation}
+the CDF of a truncated exponential of rate $\gamma$ on $x\in[0,1]$, with $\fsat(0)=1$ and
+$\fsat(z\gg1)\to0$.
+
+\subsection{The fixed structure coupling $\gamma\approx1.496$}
+In the horizon-fluid ansatz, $\fsat$ is the activated fraction of the cosmic-horizon entropy capacity,
+so the entropy that defines its weighting is accounted in the horizon reservoir at $\TAH=H/2\pi$. When a
+halo of mass $M$ virialises it releases $E_{\rm bind}\propto M^{5/3}$; by Clausius $\Delta S_{\rm
+AH}=E_{\rm bind}/\TAH\propto M^{5/3}/H$. Because $\TAH\propto H$ is mass-independent at a fixed epoch,
+the per-halo weight is $M^{5/3}$, i.e.\ $p=5/3$. With $\Sigma_S=\int M^{5/3}(dn/d\ln M)d\ln M$ and a
+Sheth--Tormen mass function~\cite{Sheth:1999mn},
+$\gamma=d\ln\Sigma_S^{(5/3)}/d\ln\sigma_8=1.4964\approx1.50$.
+
+\subsection{The structural-EOS diagnostic (the $w_0$ side-note)}
+From $\rhoDE\propto\fsat(x)$, $x=D^2$, the structural EOS is $w_{\rm
+struct}(0)=-1+\tfrac13 df_{\rm sat}/dx|_{x=1}$, and
+\begin{equation}
+\left.\frac{df_{\rm sat}}{dx}\right|_{x=1}=\frac{\gamma e^{-\gamma}}{1-e^{-\gamma}}=\frac{\gamma}{e^\gamma-1},
+\end{equation}
+so $w_{\rm struct}(0)=-1+\gamma/[3(e^\gamma-1)]=-0.856$ at $\gamma=1.4964$, approximated to $\sim4\%$ by
+$w_{\rm alg}=(4\Om/3-1)/(1-\Om)$. This is the side-note structural estimate, not the canonical crossing
+$w(z)$.
+
+\subsection{The $H$-coupling $\lambda=1-\Delta/2$}
+With the Barrow entropy $S=(A/A_0)^{1+\Delta/2}$~\cite{Barrow:2020kug}, $A=4\pi/H^2$, $\VAH\propto
+H^{-3}$, the deformed entropy density is $s_\Delta=S/\VAH\propto H^{1-\Delta}$, so
+\begin{equation}
+\rhoDE=\TAH s_\Delta\fsat\propto H^{2-\Delta}\fsat\equiv H^{2\lambda}\fsat,\quad\lambda=1-\tfrac{\Delta}{2},
+\end{equation}
+i.e.\ Barrow holographic dark energy with the Hubble cutoff~\cite{Saridakis:2020zol}. The endpoints are
+$\Delta=0\Rightarrow\lambda=1$ (area-law, disfavoured) and $\Delta=1\Rightarrow\lambda=1/2$ (volume-law
+postulate). The Barrow exponent multiplies only the $\fsat$-gated $\rhoDE$, not the gravitational
+sector, so $H(z)$ at BBN is standard and the modified-gravity bound $\Delta\lesssim10^{-4}$ does not
+apply.
+
+\subsection{$\Delta=1$ from a geometric ceiling and the GSL}
+\emph{Pillar 1 (geometric ceiling):} the Barrow deformation is the fractal dimension $d_H=2+\Delta$; a
+2-surface in 3-space cannot exceed $d_H=3$, so $\Delta\le1$. \emph{Pillar 2 (thermodynamic attractor):}
+since $\rhoDE=\TAH\sgrav$ makes the free energy vanish identically, entropy is the governing potential;
+maximising $S_\Delta=(A/A_0)^{1+\Delta/2}$ gives $dS_\Delta/d\Delta=(S_\Delta/2)\ln(A/A_0)+[\text{back-reaction}]$,
+with $\ln(A/A_0)\approx280>0$ and the back-reaction vanishing at $z=0$ and $\sim1/280$-suppressed
+elsewhere---so $dS_\Delta/d\Delta>0$ on $[0,1]$ and the constrained maximum is $\Delta=1$. These
+premises motivate but do not microscopically derive the endpoint (Sec.~\ref{sec:qg}).
+
+\subsection{Remaining repository items (catalogue)}
+The reheating master equation (the logistic $df_{\rm sat}/dt=Hf_{\rm sat}(1-f_{\rm sat})-\Gamma f_{\rm
+sat}$ governing the early $\fsat$); the $(1-\varepsilon/2)$ ``$\lambda=1$ cousin'' background
+($w_0=-0.85$, no crossing); the smooth-DE growth validation and the $c_s^2=1$ closure; the QG chain; the
+seam$=$BBN$=$fork identity; the $\fsat$ U-shape (inflation and dark energy as two de Sitter brackets);
+and Eq.~\eqref{eq:result13} (the EOS as horizon-entropy production). Full statements in
+\texttt{sede/theory.py}, each exercised by a numbered check in App.~\ref{app:suite}.
+
+\section{The verification suite}\label{app:suite}
+The repository ships a \texttt{sede/verification.py} suite of numerical checks covering: the fixed-point
+solution (closed-loop $H(z)$ to $10^{-13}$ over $z\in[0,10^6]$), BBN-safety ($\Delta N_{\rm
+eff}=\Delta Y_p=0$), the CAMB$\equiv$CLASS $r_{\rm drag}$ agreement ($5\times10^{-5}$), the CLASS
+perturbation validation ($0.1\%$), the GSL along cosmic history, the fixed $\gamma$ prescription and the
+$c_s^2=1$ closure, the horizon-dimension scaling $\lambda(d_H)=2-d_H/2$, and the state/counting
+diagnostics (SYK scrambling; causal-set dof counting in Minkowski and de Sitter; the entropy-bound
+audit; the tensor-network realisability test). \texttt{reproduce\_all.py} regenerates every number and
+figure from staged drivers.
+
+\section{Data vectors, covariances, and the $f\sigma_8$ audit}\label{app:data}
+The full data vectors and covariance matrices, the positive-definiteness checks, the benign Pantheon$+$
+duplicate-CID treatment, and the $f\sigma_8$ data audit (a small set of mis-entered growth points
+corrected to their published Gold-2018 values, and the SH0ES value correction) are reproduced from
+\texttt{data/} and documented in \texttt{DATA\_AUDIT.md}.
+
+\section{False-preference calibration methodology}\label{app:calib}
+The parametric-bootstrap procedure of Sec.~\ref{sec:results}: generation of $\LCDM$-truth mocks with
+\emph{all} probes (including the compressed CMB $R/l_A$ and SH0ES) re-drawn self-consistently; the refit
+of both models to each mock; the null distribution of $\Delta\chi^2(\mathrm{SEDE}-\LCDM)$ (mean $+0.42$);
+the $p\approx0.002$ from 500 mocks; the documented bug (CMB held fixed $\to$ biased null $-2.87$,
+$p\approx0.5$) and its fix; and the sibling-pipeline cross-check ($\sim2\sigma$,
+CMB-distance-engine-dependent). The pre-registration sha256 and contents are listed in the repository.
+
+\section{The QG derivation ledger}\label{app:ledger}
+The full chain of Sec.~\ref{sec:qg}, each link labelled by status:
+Jacobson--Cai--Kim Clausius thermodynamics (\emph{motivated/ansatz}---the dynamics follow, the absolute
+$\rhoDE=T\!\cdot\!s$ is the ansatz)~\cite{Jacobson:1995ab,Cai:2005ra}; non-extensivity $\Rightarrow$
+Tsallis--Cirto/Barrow power law (\emph{motivated}---the weakest link)~\cite{Tsallis:2012js,Barrow:2020kug};
+GSL $\Rightarrow$ volume-law endpoint $\Delta=1$ (\emph{motivated} given the thermalisation premise---a
+microscopic derivation is \emph{open}); the CKN scale (\emph{rigorous bound}, normalised by
+flatness)~\cite{Cohen:1998zx}; and the one irreducible postulate (\emph{open}---a microscopic state count
+delivering the volume law). The perturbative-QG (log-correction) and thermalised (volume-law) regimes are
+reconciled as different states, not a contradiction.
+
+\section{The energy and entropy budget}\label{app:budget}
+\emph{Energy.} Dark energy today is $\rhoDE c^2\approx6\times10^{-10}$\,J/m$^3$. The released
+gravitational binding energy is bounded by $|E_{\rm bind}|/Mc^2\sim\sigma^2/c^2$ ($\sim10^{-5}$
+clusters, $\sim10^{-7}$ galaxies), so even with all of $\Om$ collapsed
+$\rho_{\rm bind}/\rhoDE\sim10^{-6}$---binding energy is six orders too small to \emph{be} the dark
+energy, and a literal matter$\to$DE transfer is excluded (it would spoil $\rho_{\rm m}\propto a^{-3}$,
+BBN, and the CMB). \emph{Entropy.} Deposited at the cold horizon temperature, $\Delta S_{\rm AH}=E_{\rm
+bind}/\TAH\sim10^{-7}S_{\rm AH}$: deposition does not fill $\fsat$ to $O(1)$; it sets the relative
+$z$-dependence (the weight $p=5/3\to\gamma$), while the normalisation $\fsat(0)=1$ is set by the horizon
+capacity---the same family as the $(\Mpl/H)^\Delta\sim10^{61}$ seam, resolved by the holographic-DE
+scope.
+
+\begin{table}[t]
+\caption{The SEDE ledger: what is derived, normalised, and open.}\label{tab:ledger}
+\begin{ruledtabular}
+\small
+\begin{tabular}{@{}p{0.30\columnwidth}p{0.24\columnwidth}p{0.38\columnwidth}@{}}
+quantity & status & set by \\ \colrule
+magnitude $\rhoDE\sim\rhocr$ & bounded$+$normalised & CKN bound; flatness \\
+$H$-scaling $\lambda=1/2$ & postulate & volume-law entropy $S_{\rm grav}\propto\VAH$ \\
+shape $\gamma\approx1.5$ & fixed prescription & $E_{\rm bind}\propto M^{5/3}\to p=5/3$ \\
+sound speed $c_s^2=1$ & closure & smooth-DE; $\fsat$ a background functional \\
+norm.\ $\fsat(0)=1$ & imposed & present-day horizon-entropy norm. \\
+volume-law ($\Delta=1$ micro) & open & the one irreducible postulate \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
