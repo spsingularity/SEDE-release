@@ -1,0 +1,17 @@
+Manuscript text and figures — License
+======================================
+
+The manuscript text and figures in this directory (and the figure files in
+../output/), i.e. the creative/scholarly content of the paper "Structural Entropy
+Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without
+a cosmological constant", are licensed under the
+
+    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit.
+
+The software in this repository (the sede/ package, scripts/, reproduce_all.py,
+and all other source code) is licensed separately under the MIT License; see the
+top-level LICENSE file.

@@ -201,3 +201,12 @@ only the DE sector), a stated, falsifiable stance. A z_eq-tied running Δ (SEDE_
 the identical observable model as a robustness cross-check.
 
 It is a real, testable, Λ-free model — not yet established — awaiting DR3/Euclid.
+
+## License
+
+This repository is **dual-licensed** by component:
+
+- **Code** (the `sede/` package, `scripts/`, `reproduce_all.py`, and all other source) — **MIT License** (see `LICENSE`).
+- **Manuscript text and figures** (everything under `paper/`, and the figures in `output/`) — **Creative Commons Attribution 4.0 International (CC BY 4.0)**, https://creativecommons.org/licenses/by/4.0/ (see `paper/LICENSE`).
+
+If you reuse the code, MIT applies; if you reuse text or figures, please attribute under CC BY 4.0.

@@ -1,0 +1,23 @@
+{
+  "upload_type": "software",
+  "title": "SEDE: Structural Entropy Dark Energy — reproduction code and pipeline",
+  "creators": [
+    {
+      "name": "Pandev, Stilian",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "description": "Code, data vectors, and the analysis pipeline that reproduce the results and figures of the paper \"Structural Entropy Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without a cosmological constant.\" A single entry point (reproduce_all.py) regenerates every number and figure; the model and likelihood live in the sede/ package, and a verification suite checks the quoted results numerically. SEDE is a cosmological-constant-free dark-energy model in which dark energy is the thermodynamic conjugate of the cosmic apparent-horizon entropy, gated by a structure-growth factor.",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "dark energy",
+    "holographic dark energy",
+    "Barrow entropy",
+    "horizon thermodynamics",
+    "cosmology",
+    "DESI",
+    "cosmological model comparison",
+    "equation of state"
+  ]
+}
