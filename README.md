@@ -1,5 +1,7 @@
 # SEDE — Structural Entropy Dark Energy
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21050315.svg)](https://doi.org/10.5281/zenodo.21050315)
+
 A **Λ-free** model of dark energy derived from horizon thermodynamics: dark energy is
 the thermodynamic conjugate of gravitational entropy at the cosmic apparent horizon,
 modulated by structure formation.
