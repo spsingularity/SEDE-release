@@ -35,7 +35,7 @@ def main(inp, outp):
     def yml(s):  # escape for a double-quoted YAML scalar
         return s.replace("\\", "\\\\").replace('"', '\\"')
 
-    date = "Draft — " + datetime.date.today().strftime("%-d %B %Y")
+    date = datetime.date.today().strftime("%-d %B %Y")
     abs_block = "\n".join(("  " + L) if L.strip() else "" for L in abstract.split("\n"))
     front = (
         "---\n"

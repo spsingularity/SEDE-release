@@ -7,7 +7,7 @@
       "affiliation": "Independent Researcher"
     }
   ],
-  "description": "Code, data vectors, and the analysis pipeline that reproduce the results and figures of the paper \"Structural Entropy Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without a cosmological constant.\" A single entry point (reproduce_all.py) regenerates every number and figure; the model and likelihood live in the sede/ package, and a verification suite checks the quoted results numerically. SEDE is a cosmological-constant-free dark-energy model in which dark energy is the thermodynamic conjugate of the cosmic apparent-horizon entropy, gated by a structure-growth factor.",
+  "description": "Code, data vectors, and the analysis pipeline that reproduce the results and figures of both SEDE papers: Paper I, \"Structural Entropy Dark Energy: a fixed-parameter, growth-gated holographic dark-energy model without a cosmological constant\" (cosmology), and Paper II, \"Is the volume-law horizon a postulate or a consequence? A driven non-equilibrium reduction of Structural Entropy Dark Energy\" (foundations companion). A single entry point (reproduce_all.py) regenerates every number and figure; the model and likelihood live in the sede/ package, the analysis scripts in experiments/, and a verification suite checks the quoted results numerically. SEDE is a cosmological-constant-free dark-energy model in which dark energy is the thermodynamic conjugate of the cosmic apparent-horizon entropy, gated by a structure-growth factor; Paper II reduces its volume-law horizon postulate toward first principles via horizon thermodynamics, holography, and non-equilibrium statistical mechanics.",
   "license": "MIT",
   "access_right": "open",
   "keywords": [
@@ -18,6 +18,11 @@
     "cosmology",
     "DESI",
     "cosmological model comparison",
-    "equation of state"
+    "equation of state",
+    "quantum gravity",
+    "holography",
+    "de Sitter",
+    "entanglement entropy",
+    "non-equilibrium statistical mechanics"
   ]
 }

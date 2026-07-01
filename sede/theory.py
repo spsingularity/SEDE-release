@@ -656,7 +656,7 @@ Claim:
   creates nor relieves the H0 tension — that tension, if physical, lives in the
   EARLY-universe r_d sector (e.g. early dark energy), outside SEDE's construction.
 
-Evidence (best fits):
+Evidence (run_cmb_resolution.py best fits):
   SEDE-H prefers H0 ≈ 67.4–67.6 (Ω_m≈0.31, r_d≈147), essentially Planck; if
   anything its extra intermediate-z DE pulls H0 SLIGHTLY LOWER than ΛCDM
   (68.1–68.4), i.e. marginally AWAY from SH0ES. The model is H0-agnostic by
@@ -804,7 +804,7 @@ as a falsifiable TEST axis — the deviation from the volume law — on which da
 confirming the volume postulate and excluding the area law (Δ=0) at ~19σ (run_delta_indirect.py;
 results bit-identical, run_volume_equiv.py; code: friedmann.E_SEDE_volume). The one open item is
 unchanged, only stated more honestly: "why is the horizon entropy volume-law (coarse-grained
-entanglement) rather than area-law?" — the same single postulate, no longer
+entanglement) rather than area-law?" — the same single postulate (OPEN_PROBLEMS §2), no longer
 dressed as a parameter value. □
 """
 

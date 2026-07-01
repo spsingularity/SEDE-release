@@ -64,7 +64,7 @@ if __name__ == "__main__":
     def age_from(zlo, Efun):
         zz = np.logspace(np.log10(max(zlo,1e-6) if zlo>0 else 1e-6), 6, 4000) if zlo>0 else \
              np.concatenate([[0.0], np.logspace(-6, 6, 4000)])
-        return INV_H0_GYR * np.trapezoid(1.0/((1+zz)*Efun(zz)), zz)
+        return INV_H0_GYR * np.trapz(1.0/((1+zz)*Efun(zz)), zz)
     t0_s = age_from(0.0, E_sede); t0_l = age_from(0.0, E_lcdm)
     print(f"\n[#6 Age] t0: SEDE={t0_s:.2f} Gyr   ΛCDM={t0_l:.2f} Gyr   (1/H0={INV_H0_GYR:.2f} Gyr)")
     print(f"         age(z): " + "  ".join(f"z={zq}:{age_from(zq, E_sede):.2f}Gyr" for zq in (0.5,1,2,3)))

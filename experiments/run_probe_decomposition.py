@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-T2.3 — Per-probe Δχ² decomposition at the joint best-fit
+T2.3 — Per-probe Δχ² decomposition at the joint best-fit  [REVISION_PLAN.md]
 ============================================================================
 CL (round 2): the leave-one-probe-out range is NOT the decomposition — LOO is blind to a
 *paired* tension (two probes in mutual tension that SEDE relieves jointly look stable under

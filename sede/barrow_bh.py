@@ -2,7 +2,7 @@
 Barrow black-hole thermodynamics — the CROSS-HORIZON sector of SEDE (Tier 3).
 
 SEDE fits a Barrow deformation Δ=1 on the COSMOLOGICAL horizon (Thms 8–9). If Δ is a
-universal property of horizons (the quantum-gravity reading),
+universal property of horizons (the quantum-gravity reading, QUANTUM_GRAVITY_IMPLICATIONS.md),
 the SAME Δ must appear on BLACK-HOLE horizons. This module gives the BH-sector predictions
 that an independent measurement (GW area-law tests, primordial-BH evaporation) can falsify.
 

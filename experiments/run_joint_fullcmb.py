@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Profiled JOINT fit with the FULL primary CMB in the loop
+Profiled JOINT fit with the FULL primary CMB in the loop  [REVISION_PLAN.md T1.1, step 1]
 =========================================================================================
 The headline ΔDIC≈−2.9 used the COMPRESSED (R, ℓ_A) CMB inside the joint. E1
 (run_full_cmb_mcmc.py) showed the full primary CMB *alone* does not break SEDE (Δχ²=−0.43).

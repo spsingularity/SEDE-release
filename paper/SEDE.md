@@ -93,12 +93,12 @@ fitted parameter** — every input is fixed by a stated theoretical choice (§3)
 cosmological parameter count as the ΛCDM baseline used in this analysis (the five of the compressed
 late-time pipeline of §4). The price
 is a single postulate about the quantum-gravitational structure of the horizon (§8), which we make
-explicit, plus the accompanying fixed choices (the halo-entropy prescription for γ, the smooth-DE
+explicit, plus the accompanying fixed choices (the halo-binding-entropy derivation of γ (Thm 4C), the smooth-DE
 closure c_s²=1), which we flag as such rather than as derivations.
 
 This paper is organised around the energy ledger. §2 states the model and establishes energy
 conservation as its backbone, fixing the (entropic, not energetic) role of binding energy; §3 fixes
-the dark-sector inputs — the structure coupling γ from a halo-entropy prescription, then w(z), λ, and the sound
+the dark-sector inputs — the structure coupling γ from the halo-binding-entropy derivation (Thm 4C), then w(z), λ, and the sound
 speed c_s² — separating the horizon-set *magnitude* from the structure-set *shape*. §4 describes the
 data and the CAMB-in-the-loop methodology; §5 presents the results, including a false-preference
 calibration and out-of-sample tests; §6 gives the falsifiable predictions; §7 the relation to dark
@@ -159,7 +159,7 @@ $$f_{\rm sat}(z) = \frac{1 - e^{-\gamma D^2(z)}}{1 - e^{-\gamma}}, \qquad D(z)\ 
 where D(z) is the model's **self-consistent** growth factor (computed with SEDE's own E(z), which in
 turn depends on f_sat — the background is solved as the joint fixed point; §4.4, App. B).
 with f_sat(0) = 1 imposed as the present-day normalisation convention and f_sat → 0 at high z. The
-single shape parameter γ is fixed by a halo-entropy prescription (§3.1), not fitted.
+single shape parameter γ is fixed by a halo-binding-entropy derivation (§3.1, Thm 4C), not fitted.
 
 **The Friedmann equation.** Inserting ρ_DE into the (unmodified) Friedmann constraint gives a single
 **fixed-point equation** for the dimensionless expansion rate E = H/H₀:
@@ -235,7 +235,7 @@ dark-sector parameter. What the choices control is the **shape**: *when* and *ho
 turns on. We therefore lead with the structure
 coupling γ — the shape, set by the binding energy — and then give w₀, λ, and c_s².
 
-### 3.1 The structure coupling γ ≈ 1.5 from a halo-binding-energy prescription
+### 3.1 The structure coupling γ ≈ 1.5 from a halo-binding-energy derivation (Theorem 4C)
 γ sets the sharpness of the structure gate, γ = d ln Σ_S / d ln σ8² with Σ_S the entropy-weighted
 collapsed mass, Σ_S = ∫ M^p (dn/d ln M) d ln M — the derivative is with respect to the **variance**
 σ8² because the gate's argument is x = D² = σ8²(z)/σ8²(0) (§3.4, A.2); equivalently γ = ½ d ln Σ_S/d ln σ8. The weight exponent p is fixed by *where* the
@@ -775,25 +775,51 @@ E_G errors; the model's only discriminator remains the deformation amplitude Δ 
 the lock (P2) would falsify the structure-sourcing mechanism itself** — SEDE would then be an ordinary
 kinematic w(z) — so P2 is the test that separates the mechanism from a curve fit.
 
-**An optional near-critical layer (deferred to a companion paper).** If, in addition, the horizon sits
-near the area↔volume spinodal — the flat-landscape limit, i.e. the Δ → 1 endpoint itself — the response
-sector becomes *near-critical* (the **Critical Horizon Response** regime) and acquires fluctuation-level
-signatures: a localised enhancement of large-scale activity at the transition z* ≈ 1.2 (P3); a small,
-**nonzero**, redshift-localised *separate-universe* (long-wavelength) modulation of growth/ISW peaked at
-z* (P4 — the kill test, distinct from the *broad, sub-horizon* signal that clustering dark energy with
-c_s² < 1 would give, and from ΛCDM's exact zero); and a critical-slowing transient in γ_growth (P5).
-These are **conditional, falsifiable** predictions that add no fitted parameter but depend on the
-proximity-to-criticality hypothesis. Because they are not required for — and do not affect — the core
-background result, we develop them, with the separate-universe/super-sample-covariance formalism
-[arXiv:1711.07467] and the supporting figures, in a **companion paper (in preparation)**; the
-corresponding kill test is within reach of Euclid/Rubin weak-lensing tomography.
+**A near-critical layer entailed by the volume law (predictions deferred to a companion paper).** The
+*bare* gate is non-critical: it is the J = 0 limit of a Bragg–Williams area↔volume landscape, with a
+finite, monotone susceptibility (χ_x ≈ 1.93 → 0.43), i.e. a smooth crossover. A genuine spinodal needs a
+cooperative coupling J ≥ J_c = 4T between the horizon degrees of freedom — and that cooperativity is
+**not** a new assumption. Volume-law entanglement (S ∝ V, the Δ = 1 postulate of §8.4) is realised by
+maximally nonlocal, all-to-all connectivity (the SYK class / the nonlocal-connectivity requirement of
+§8.5 and Appendix G), which is precisely the regime where mean
+field is exact and the spinodal is a real, robust feature: the ordered phase exists for any coupling above
+threshold and the critical susceptibility diverges (χ_peak ∝ √N → ∞), with no J-tuning, whereas the
+area-law (local, short-range) class has no finite-temperature transition at all (`run_chr_soc.py`). Thus
+the *existence* of the spinodal tracks Δ, and the same single postulate that fixes the background (horizon
+volume law ⇒ Δ = 1) also supplies the cooperative criticality of the response sector. Self-organised
+criticality fixes the operating point: the structure-growth drive is slower than the horizon scrambler
+(SYK-saturated, ∼ Planckian) by ∼10⁵⁸, the slow-drive/fast-relaxation condition that holds the order
+parameter on its spinodal, so f_sat = ½ at z* ≈ 1.2 (m = ½, the J_c point) is an attractor reached by the
+GSL Δ → 1 flow (§8), not a tuned coincidence. At that operating point the response sector becomes
+*near-critical* (the **Critical Horizon Response** regime) and acquires fluctuation-level signatures: a
+localised enhancement of large-scale activity at z* (P3); a small, **nonzero**, redshift-localised
+*separate-universe* (long-wavelength) modulation of growth/ISW peaked at z* (P4 — the kill test, distinct
+from the *broad, sub-horizon* signal that clustering dark energy with c_s² < 1 would give, and from ΛCDM's
+exact zero); and a critical-slowing transient in γ_growth (P5). These add **no fitted parameter** and now
+follow from the volume-law postulate rather than a separate proximity-to-criticality hypothesis. Because
+the horizon is driven *through* its spinodal at z* (not parked at a tuned critical point) with an
+all-to-all coupling, the companion paper sharpens these into a specific signature: the z*-localised
+fluctuations are scale-free in the **mean-field self-organised-criticality** class — a power-law amplitude
+spectrum with avalanche exponent τ ≈ 3/2 and a 1/f temporal spectrum — which a single-scale clustering
+dark energy cannot mimic. Because they are not required for — and do not affect — the core background
+result, we develop them, with the separate-universe/super-sample-covariance formalism [arXiv:1711.07467]
+and the supporting figures, in a **companion paper (in preparation)**. The corresponding kill test is
+within reach of Euclid/Rubin weak-lensing tomography.
 
 **Cross-horizon universality (speculative; companion).** Whether Δ = 1 extends to black-hole horizons —
 giving S_BH ∝ A^{3/2} ∝ M³ and strongly altered primordial-black-hole evaporation — is a speculative
 extension logically separate from the core model, which requires the deformation only in the dark-energy
 sector. We do **not** adopt it: SEDE is consistent with the standard area law for astrophysical black
-holes, and the black-hole-vs-cosmic-horizon asymmetry is a genuine **conceptual cost** (§8.5), not a
-neutral prediction. We pursue this, and the Verlinde dark-matter connection (§7), in the companion paper.
+holes, and **on the evidence of this paper alone the black-hole-vs-cosmic-horizon asymmetry remains a
+genuine conceptual cost (§8.5)**. The companion paper *offers a resolution* — a *state-dependent* count
+in which a horizon is area-law when undriven (a black hole, in equilibrium) and volume-law when
+sustainedly structure-driven (the cosmic horizon), which would make the asymmetry a predicted feature
+rather than a defect — but that reframing **rests on a conjecture** (developed there); absent it, the
+cost stands. The black-hole side is at least derivable: the structure entropy deposited at a black hole
+is negligible against the entropy it *creates* (S_rad/S_BH ∼ (M/M_P)^{−1/2}), so no black hole — not even
+a primordial one built entirely by collapse at formation — activates volume. Either way the asymmetry
+sharpens a falsifier: an isolated *volume-law* black hole would imply a universal deformation. We pursue
+this, and the Verlinde dark-matter connection (§7), in the companion paper.
 
 ## 7. Relation to other sectors
 
@@ -965,13 +991,32 @@ Gough's fit favouring a higher H₀ — consistent with his Hubble-tension claim
 a distinct, more-derived realisation of Gough's idea, decided from ΛCDM and from Gough alike only by the
 high-z dark-energy and growth data to come (§6).
 
+The closest *entropic-acceleration* relative is the General Relativistic Entropic Acceleration (GREA)
+programme of García-Bellido and Espinosa-Portalés [arXiv:2106.16014, 2106.16012], which — like SEDE —
+removes Λ and sources late-time acceleration from the entropy of the cosmic horizon, with the Helmholtz
+free energy F = U − TS (not matter alone) as the gravitational source and entropy *production* as the
+engine. The differences are sharp and observable: GREA uses the **boundary (area)** horizon entropy and a
+single parameter (the horizon-to-curvature ratio), with the growth driven by the horizon's own
+*expansion*, giving a quintessence-like w(a); SEDE uses the **volume** entropy (Δ = 1) **gated by
+structure** (f_sat), which locks w(z) to the growth history and yields a phantom crossing, with a
+parameter-free dark sector. The connection is quantitative — SEDE's structure-driven entropy production
+maps to a positive (second-law) effective bulk viscosity that peaks at the gate-activation epoch, casting
+SEDE as a *structure-gated* member of the GREA family — and it is the deformation Δ that discriminates
+them: were SEDE's residue to resolve to the area branch (Δ = 0), its phenomenology would collapse toward
+GREA's. So SEDE is not "GREA plus a volume postulate": the structure-gating is itself a falsifiable
+signature — the w(z)↔growth phase-lock (§6) that neither GREA's expansion-driven w(a) nor a kinematic CPL
+fit shares. We develop this relationship, and SEDE's foundational status, in the companion paper.
+
 ## 8. The quantum-gravity underpinning
 
 The energy-conservation account of §2–§3 took two horizon properties as given: the **magnitude**,
 ρ_DE ~ ρ_crit rather than the QFT vacuum's M_P⁴, and the **H-scaling** λ = 1/2, which follows from
 the horizon entropy being **volume-law** (S_grav ∝ V_AH; §3.3) with *no deformation parameter*. This
 section supplies their quantum-gravitational basis — it is the support beam under the construction,
-and a reader content to take the two scales as inputs may treat it as optional. We argue why the
+and a reader content to take the two scales as inputs may treat it as optional. (Its full development —
+the reduction route map, the driven non-equilibrium-steady-state account, and the closure analysis — is
+the subject of a forthcoming companion paper; **none of the cosmological results of §§1–7 depends on it**,
+and the companion's mechanisms, where invoked above, are flagged as conjectural.) We argue why the
 horizon entropy is volume-law rather than area-law, anchor the magnitude to the holographic bound and
 the flatness normalisation, and isolate the single statement that remains a postulate. Throughout, the Barrow parameter Δ appears
 only to *label* the area-to-volume interpolation (S ∝ A^{1+Δ/2}: Δ=0 area-law, Δ=1 ⟺ volume-law) and as
@@ -1008,7 +1053,13 @@ area-law branch disfavoured in the diagnostics.
    state (w₀ = −0.49) and large early-dark-energy fraction are disfavoured in the conditional
    diagnostics of §5.6. On current data the volume branch is **favoured over the area-law
    alternative**, not merely an optional choice — though, as §5.6 stresses, the robust marginalised
-   measurement is still to come.
+   measurement is still to come. The push is *monotone* in Δ: the exact identity
+   Ω_DE(z) = Ω_DE0 · f_sat(z) · E(z)^{−Δ} (from ρ_DE ∝ H^{2−Δ}f_sat) and E > 1 in the past make a larger
+   Δ suppress the early-dark-energy fraction more strongly — Ω_DE(z = 3) falls from 0.127 (Δ = 0) through
+   0.060 (Δ = 0.5) to 0.029 (Δ = 1, below ΛCDM's 0.035; `run_cmb_earlyde.py`). So the geometric ceiling
+   of point 1 (Δ ≤ 1) and the early-dark-energy lever here *cooperate*: the ceiling bounds Δ from above
+   and the CMB pushes it to that bound, the volume endpoint. This remains a **diagnostic, not a
+   derivation** — but it is a third, independent reason the data sit at Δ = 1.
 
 Three further consistency motivations — a *driven non-equilibrium steady state* (the structure gate
 maintains the volume-law state despite a long scrambling time), a *roughening / Edwards–Wilkinson
@@ -1037,7 +1088,13 @@ first principles. The same bound, read as a UV–IR relation, gives a gravitatin
 
 ### 8.3 The seam, BBN-safety, and the holographic scope
 A naïve *microscopic* volume-law entropy density would be Planckian, so a naïve ρ_DE = T·(S_vol/V) would
-overshoot ρ_crit by (M_P/H)^Δ ~ 10⁶¹ — the square root of the 10¹²² hierarchy (Result 11). The *same*
+overshoot ρ_crit by (M_P/H)^Δ ~ 10⁶¹ — the square root of the 10¹²² hierarchy (Result 11). The same
+factor appears as a clean *no-go* (`run_deriv_E_nogo.py`): the Bekenstein bound on the horizon's energy
+E = ρ_crit V_H gives S ≤ 2πRE/ħc = ¼(A/ℓ_P²) — exactly the Gibbons–Hawking *area* law (verified to within
+the O(1) geometric factor) — so the volume law cannot be obtained from any maximum-entropy or energy-bound
+argument; it *exceeds* the bound by precisely R/ℓ_P ~ 10⁶¹. This sharpens rather than weakens the
+postulate: it proves the missing ingredient is a *state/counting* input (a Planckian-density, volume-law
+horizon), not an energy bound, and fixes its exact size. The *same*
 factor controls three apparently separate issues — this seam, the BBN bound on a Barrow-modified
 Friedmann equation, and the modified-gravity-vs-holographic fork — which are one object. The resolution
 is the holographic-DE scope adopted in §2: the deformation acts **only on the dark-energy fluid**
@@ -1137,17 +1194,85 @@ Sitter static patch e^{Area/4} or e^{Volume}?"* — a frontier problem a complet
 settle. *Empirically* it is the deformation Δ: Δ=0 (area) is already disfavoured by present data
 (§5.6), and DESI DR3 + Euclid will measure Δ to ~0.09 (§6). SEDE's postulate is thus not an arbitrary
 assumption but a *consistent, realisable bet on a well-posed open question of quantum gravity*, with a
-decisive test imminent. Tellingly, the one horizon we can check today — the black hole — is area-law;
-we name that asymmetry as a genuine conceptual cost (§7), not a neutral prediction.
+decisive test imminent. Tellingly, the one horizon we can check today — the black hole — is area-law; on
+the evidence here this asymmetry is a genuine conceptual cost. The companion paper *offers* a resolution
+— a state-dependent count in which a black hole is area-law because *undriven* and only the
+structure-driven cosmic horizon activates the volume law — which, if its (conjectural) mechanism holds,
+would turn the cost into a predicted feature, with the black-hole side derivable and a sharp falsifier (an
+isolated volume-law black hole).
+
+### 8.6 Is the postulate derivable? Summary of the reduction (full treatment in companion paper)
+
+The volume-law postulate is not monolithic: it splits into a *state* (the horizon dof are maximally
+entangled/thermal), a *form* (the entropy scales as the volume), a *scale* (the magnitude is ρ_crit, not
+ρ_Planck), and a *count* (the number of dof grows as the bulk, N ∝ R³, not the boundary, N ∝ R²). The
+deformation Δ is fixed by the **count** alone. A systematic study of how derivable each piece is — five
+routes (de Sitter holography/SYK, entanglement first law in a thermal state, Verlinde emergent gravity,
+gravitational non-additivity, and a Bekenstein no-go), the reduction of the count to a *driven
+non-equilibrium steady state*, and three closure routes — is developed in a companion paper; we state the
+conclusions here, as they bear on how *ad hoc* the postulate is.
+
+The *state* is first-principles (a maximal scrambler is volume-law-entangled; Appendix G, §8.5); the
+*form* reduces to thermalisation (volume-law entanglement is the generic behaviour of a thermal reference
+state for regions larger than the thermal length); the *scale* is CKN (§8.2). What remains irreducible is
+purely the **count**, and a Bekenstein no-go makes precise *why*: maximum-entropy/energy bounds give the
+*area* law (§8.3), so the volume count cannot be obtained from any energy argument — it is a genuine
+state/counting statement. The count is, in turn, downstream of *connectivity* (locally-connected horizon
+dof give area-law entropy, nonlocal give volume-law) and connectivity of *interaction range*: gravity is
+strongly long-range (1/r with α = 1 ≤ d), hence non-additive — the volume class is the *natural* one for a
+self-gravitating horizon, with area-law arising only when the holographic bound intervenes for an
+*isolated, equilibrium* horizon (a black hole). The cosmic horizon differs in being continuously *driven*
+by structure formation, which converts the black-hole/cosmic asymmetry (§7) into a discriminator
+(equilibrium → area, driven → volume) and reduces the residue to a single, falsifiable **driven-NESS
+statement**: a strongly-long-range horizon, driven by structure, self-organises to its area↔volume
+spinodal and locks the volume branch. The companion paper supplies both microscopic maps this requires
+(the cooperative coupling J ≥ J_c is the gravitational binding itself; the drive is the
+structure-deposited entropy, clearing the barrier at z ≈ z*) and verifies the volume-lock is robust over a
+broad, untuned basin — so the static *counting* postulate is replaced by the weaker, more physical
+statement that the horizon free energy is bistable with a sub-unity barrier.
+
+**Closure** — deriving even that bistable free energy from first principles — would reduce the dark sector
+to Ω_m plus established physics. It takes three precise forms: a de Sitter-holography computation of the
+bulk count (open, and provably not shortcut-able through energy bounds); exhibiting the volume branch as a
+real saddle/state (the bistable landscape follows from gravitational cooperativity given that branch); or
+*measuring* Δ. The last is decisive and already in hand: DESI DR3 + Euclid pin Δ to ∼0.09 (§6), so Δ = 1
+establishes the volume count as fact and Δ = 0 refutes it. The postulate is thus a single, sharply-posed,
+falsifiable statement with an imminent test — not an unconstrained assumption.
 
 ## 9. Discussion: open problems & honest assessment
 
 **The one open item.** Every dark-sector input is fixed by a stated choice (§3) given the single
 postulate that the horizon is volume-law-entangled (§8.4). That postulate is motivated by gravity's non-extensivity
 and the second law but is not derived from a microscopic state count; it is the model's one
-irreducible input. We have argued it is not closable by reframing (canonical vs microcanonical
-accounting gives either area-law λ = 1 or Planckian-volume λ = 1/2, never both for free) — it is a
-genuine open problem, and a *falsifiable* one (§6).
+irreducible input. The canonical-vs-microcanonical reframing (which gives area-law λ = 1 or
+Planckian-volume λ = 1/2) does not give both for free, but it is not symmetric: the de Sitter
+horizon has **negative specific heat** (C = −2S) and gravity is strongly long-range (α = 1 ≤ d,
+§8.6), so by the standard non-additive-systems result [Campa, Dauxois & Ruffo 2009] the two
+ensembles are *inequivalent* and the canonical one is ill-defined for the isolated self-gravitating
+horizon. This selects the *microcanonical accounting* (and removes the canonical/area-law horn as
+unphysical for a long-range, negative-specific-heat horizon); it does not by itself derive the volume
+count — within the microcanonical ensemble, whether the *state
+count* is itself volume (the dS-holography question of §8.6): a genuine open problem, and a
+*falsifiable* one (§6). The systematic route map of §8.6 narrows it: the
+*state* (maximal entanglement) is first-principles, the *form* (S ∝ V) reduces to thermalisation, the
+*scale* is CKN, and the irreducible residue is purely the bulk-vs-boundary **count**. That count, in
+turn, reduces to one provable statement — a **driven-NESS entropy theorem** (a strongly-long-range
+horizon, driven by structure formation, settles in the volume-law steady state rather than the area-law
+equilibrium) — which, if established, would close the residue *and* resolve the black-hole/cosmic-horizon
+asymmetry (§7) as the same equilibrium-vs-driven mechanism. Both its microscopic maps are now
+supplied (§8.6): connectivity → J ≥ J_c (the cooperative coupling is the largest eigenvalue of the
+gravitational coupling matrix = the per-site binding = the *same* super-extensive quantity behind the
+non-additivity, so volume-counting and volume-locking are one number, generic at the horizon's N), and
+deposition → drive (the accumulated structure entropy, ∝ f_sat, clears the locking barrier at z ≈ z* with
+magnitude set by the near-critical CHR identity ε_dep·χ ≈ 1, and locks Δ = 1 permanently). What survives is
+the shape of the horizon order-parameter free energy F(m). The monotone structure drive is a *ratchet*
+that necessarily carries the horizon through the area-branch spinodal at z* and the second law locks it at
+the volume well (S_vol ≫ S_area); we verify this is robust over a broad, untuned basin of the landscape
+parameters, drive amplitude, and initial condition (`run_soc_attractor.py`) — self-organised, not a tuned
+knife-edge. So the static volume-law *counting* postulate is reduced to one *dynamical* and falsifiable
+statement: the horizon's area↔volume free energy is bistable with J ≥ J_c (gravity supplies this) and a
+sub-unity barrier. We state the theorem as the well-posed successor to the postulate — both maps supplied,
+the residue reduced to that one structural assumption and shown robust — not as a finished proof.
 
 **Scope and tensions.** H₀ is out of SEDE's scope (it is r_d-pinned; the model does not address the
 distance-ladder tension and we do not claim it does). The structure-sourcing *mechanism* itself — the
@@ -1278,12 +1403,12 @@ one at ~11σ. SEDE is suggestive, not established — and, crucially, it is deci
 ## Code and data availability
 
 All code, data vectors, and analysis pipelines are publicly available at
-`github.com/spsingularity/SEDE`. A single entry point, `reproduce_all.py`, regenerates every number and
+`github.com/spsingularity/SEDE-release`. A single entry point, `reproduce_all.py`, regenerates every number and
 figure in this paper from staged drivers; the model and likelihood live in the `sede/` package, and the
 verification suite (`sede/verification.py`) checks the quoted results numerically. The observational
 inputs are standard public datasets (DESI DR2, Pantheon+/DES-5YR/Union3, Moresco cosmic chronometers,
 Gold-2018 fσ8, compressed Planck, eBOSS DR16), retrieved via the documented loaders. A tagged release
-with an archival DOI will accompany journal submission.
+is archived at Zenodo, DOI [10.5281/zenodo.21050314](https://doi.org/10.5281/zenodo.21050314).
 
 ## Use of AI tools
 
@@ -1485,7 +1610,8 @@ $$\Delta S_{AH} = \frac{E_{\rm bind}}{T_{AH}} \propto \frac{M^{5/3}}{H}.$$
 Because T_AH ∝ H is identical for every halo at a given epoch (mass-independent), the per-halo mass
 weight is M^{5/3}: **p = 5/3**. With Σ_S = ∫ M^{5/3}(dn/d ln M)d ln M and a Sheth–Tormen mass function
 (COLOSSUS, EH98 transfer, M ∈ [10¹⁰, 10¹⁶] M_⊙),
-$$\gamma = \frac{d\ln\Sigma_S^{(5/3)}}{d\ln\sigma_8} = 1.4964 \approx 1.50.$$
+$$\gamma = \frac{d\ln\Sigma_S^{(5/3)}}{d\ln\sigma_8^2} = \tfrac{1}{2}\,\frac{d\ln\Sigma_S^{(5/3)}}{d\ln\sigma_8} = 1.4964 \approx 1.50$$
+(the derivative is w.r.t. the variance σ8² because the gate's argument is x = D² = σ8²/σ8²(0); equivalently d ln Σ_S/d ln σ8 = 2.993).
 The earlier p = 1 (Result 4B) divided E_bind by the *halo's* virial temperature T_vir ∝ M^{2/3}, which is
 the entropy of the halo's own internal state — correct for the halo, wrong for the entropy added to the
 cosmic horizon (where f_sat lives). The heat is the same; the reservoir, and hence the temperature, is
@@ -1577,7 +1703,7 @@ chain and the volume-law postulate. **Result 11**: the seam = BBN bound = modgra
 The repository ships a `sede/verification.py` suite of 63 numerical checks (V1–V63) covering: the
 fixed-point solution (closed-loop H(z) to 10⁻¹³ over z ∈ [0, 10⁶]), BBN-safety (ΔN_eff = ΔY_p = 0),
 the CAMB≡CLASS r_drag agreement (5×10⁻⁵), the CLASS perturbation validation (0.1%), the GSL along
-cosmic history, the fixed γ prescription and the smooth-DE c_s² = 1 closure, the horizon-dimension
+cosmic history, the fixed (derived, Thm 4C) γ and the smooth-DE c_s² = 1 closure, the horizon-dimension
 scaling λ(d_H) = 2 − d_H/2 (V59), the §8.5 state/counting diagnostics (SYK scrambling V60; causal-set
 dof counting in Minkowski + de Sitter V61; the entropy-bound audit V62; the tensor-network
 realisability test V63), and the cross-horizon and quantum-sector consistency checks.
@@ -1642,7 +1768,7 @@ holographic-DE scope (Barrow acts only on the f_sat-gated dark-energy fluid).
 |---|---|---|
 | magnitude ρ_DE ~ ρ_crit | **bounded + normalised** | CKN holographic upper bound (§8.2), amplitude fixed by flatness (O(1) saturation of the bound assumed) |
 | H-scaling λ = 1/2 | **postulate** | volume-law horizon entropy S_grav ∝ V_AH (§8.1) |
-| shape γ ≈ 1.5 | **fixed prescription** | halo-binding-energy weighting E_bind ∝ M^{5/3} → p = 5/3 (§3.1) |
+| shape γ ≈ 1.5 | **derived (Theorem 4C)** | halo-binding-energy weighting E_bind ∝ M^{5/3} → p = 5/3 (§3.1) |
 | sound speed c_s² = 1 | **closure** | minimal smooth-DE treatment, f_sat a background functional (§3.4) |
 | normalisation f_sat(0) = 1 | **imposed** | present-day horizon-entropy normalisation |
 | volume-law horizon (Δ = 1 microscopically) | **open** | the one irreducible postulate (§8.4) |

@@ -48,6 +48,16 @@ def main():
     l3 = OmDE_of(lambda zz: E_LCDM(zz, Om), np.array([z3]))[0]
     print(f"Ω_DE(z=3): SEDE={s3:.3f}  ΛCDM={l3:.3f}  (SEDE has LESS early DE)")
 
+    # Early-DE suppression is MONOTONE in the Barrow deformation Δ (§8.1 third
+    # argument for Δ=1): exact identity Ω_DE(z)=Ω_DE0·f_sat·E(z)^(−Δ), E>1 in the
+    # past, so larger Δ suppresses early DE more. With the geometric ceiling Δ≤1,
+    # the data push Δ to the volume endpoint. (A diagnostic, not a derivation.)
+    from sede.friedmann import E_SEDE_barrow
+    print("Ω_DE(z=3) vs Barrow Δ (monotone ⇒ Δ=1 maximally CMB-safe):")
+    for D in (0.0, 0.5, 1.0):
+        oD = OmDE_of(lambda zz, _D=D: E_SEDE_barrow(zz, Om, GAM, Delta=_D), np.array([z3]))[0]
+        print(f"   Δ={D:.1f} (λ={1-D/2:.2f}):  Ω_DE(z=3)={oD:.3f}")
+
     fig, ax = plt.subplots(1, 2, figsize=(11, 4.2))
 
     # Panel A — early-DE fraction

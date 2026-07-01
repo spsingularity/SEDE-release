@@ -16,17 +16,8 @@ Tests:
   V12: dynamical EOS w(z) + CPL (w0,wa) fit — the apples-to-apples DESI object
 """
 
-import os, sys
 import numpy as np
 from scipy.integrate import quad
-
-# A few cross-validation tests lazily import optional drivers from scripts/.
-# Put that directory on the path so they resolve (they still skip gracefully if
-# an optional third-party dependency such as classy/cobaya is missing).
-_SCRIPTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts")
-if os.path.isdir(_SCRIPTS) and _SCRIPTS not in sys.path:
-    sys.path.insert(0, _SCRIPTS)
-
 from .friedmann import E_SEDE, E_LCDM, compute_growth_factor
 from .theory import w_DE_algebraic, w_DE_effective, w_DE_fluid, fsat_late
 
@@ -224,7 +215,7 @@ def test_dynamical_eos_cpl(Omega_m=0.311, gamma=1.4964):
     HISTORICAL: this phantom mismatch was the original SEDE's problem. It is RESOLVED
     by the dynamical-horizon / Barrow coupling (λ>0): the EOS-gap closure (Theorem 5D,
     V19) makes the SEDE-H fluid w0 = the algebraic w0 = -0.85, and the Barrow λ=0.5
-    model is PREFERRED over ΛCDM. This test only checks the
+    model is PREFERRED over ΛCDM (see SEDE_followups §P). This test only checks the
     additive-model EOS is correctly phantom — the motivation for SEDE-H, not the
     current verdict. PASS = additive EOS is phantom and the CPL fit reproduces it.
     """

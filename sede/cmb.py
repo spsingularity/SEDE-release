@@ -110,7 +110,7 @@ def chi2_cmb_distance(interp_DC, Omega_m, gamma, H0, v_fid, omega_b=0.02237):
     analytic-r_s pipeline (cancels the convention offset). This is the proper
     likelihood-level term that puts the acoustic scale l_A into the joint fit.
 
-    Result: with l_A included, SEDE-H REFITS from the
+    Result (run_cmb_resolution.py): with l_A included, SEDE-H REFITS from the
     fixed-parameter l_A≈-16σ to l_A≈-1σ, R≈-1.3σ and stays Δχ²≈-1.3 vs LCDM —
     the acoustic-scale "tension" was a fixed-parameter artifact, robust across
     covariance assumptions. l_A does NOT exclude SEDE-H.

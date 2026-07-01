@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-T2.2 — Information criteria (AIC / BIC / DIC) alongside ΔDIC
+T2.2 — Information criteria (AIC / BIC / DIC) alongside ΔDIC  [REVISION_PLAN.md]
 ================================================================================
 GP "E": DIC alone is distrusted for non-Gaussian posteriors; report AIC/BIC too.
 

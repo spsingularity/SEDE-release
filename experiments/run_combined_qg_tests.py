@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Creative tests of the COMBINED QG theory (CKN holographic SCALE + volume-law/non-extensive
-FORM, Theorem 10). The novelty: these probe the *junction* between the two
+FORM, Theorem 10 / QG_DERIVATION.md). The novelty: these probe the *junction* between the two
 derivations — consistency, the scale↔scaling link, and the joint budget — which neither piece
 tests alone.  Labels: [REAL] calculation now, [MODEL] grounded prediction.
 Run:  python run_combined_qg_tests.py

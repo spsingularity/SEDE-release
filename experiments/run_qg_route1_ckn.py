@@ -2,7 +2,7 @@
 """
 QG postulate — ROUTE 1: can the CKN holographic energy bound FORCE the entropy FORM (δ=3/2, Δ=1)?
 
-The one irreducible postulate (§2) is the VOLUME-LAW entropy
+The one irreducible postulate (QG_DERIVATION §2 / OPEN_PROBLEMS §2) is the VOLUME-LAW entropy
 form S ∝ A^{1+Δ/2}=A^{3/2}, not why Δ=1 (the GSL + geometric ceiling fix that GIVEN a power law).
 The repo already derives the dark-energy SCALE from the Cohen–Kaplan–Nelson (CKN) UV–IR bound
 (Principle 0). Route 1 asks the natural follow-up: does the SAME holographic bound also fix the

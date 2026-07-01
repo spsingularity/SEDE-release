@@ -114,8 +114,8 @@ def exp3_lss_crosscorr():
     dbeta_dz = np.gradient(beta_of_zs(z, dphi, z), z)                 # rotation kernel
     dbeta_dz_g = np.interp(zg, z, dbeta_dz)
     Wg = zg**2 * np.exp(-(zg/0.7)**2)                                 # toy Quaia-like galaxy kernel
-    Wg /= np.trapezoid(Wg, zg)
-    overlap = np.trapezoid(np.abs(dbeta_dz_g)*Wg, zg) / np.trapezoid(np.abs(dbeta_dz_g), zg)  # fractional overlap
+    Wg /= np.trapz(Wg, zg)
+    overlap = np.trapz(np.abs(dbeta_dz_g)*Wg, zg) / np.trapz(np.abs(dbeta_dz_g), zg)  # fractional overlap
     print(f"\n  SEDE (minimal):  C_ℓ^{{βg}} = 0 EXACTLY (no field couples to structure).")
     print(f"  Axion DE:        rotation kernel dβ/dz peaks at z≈{zg[np.argmax(np.abs(dbeta_dz_g))]:.2f}; overlap")
     print(f"                   with a z≲1 galaxy sample = {overlap:.2f} of the rotation ⟹ a nonzero β–galaxy")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-E2 — γ systematics table
+E2 — γ systematics table  [REVISION_PLAN.md T1.2]
 =================================================
 The reservoir (horizon, T_AH ∝ H) is FIXED by the §2 identity ρ_DE = T_AH·s_grav ⟹
 the entropy weight p = 5/3 (binding energy E_bind ∝ M^{5/3} deposited at mass-independent

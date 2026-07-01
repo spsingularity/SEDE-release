@@ -118,7 +118,7 @@ if __name__ == "__main__":
     print("    zero free energy ⟹ no lateral growth drive ⟹ thermal (EW) roughening ⟹ Δ→1.")
     print("  ⟹ 'why volume-law Δ=1' reduces to 'why EW not KPZ' reduces to SEDE's ALREADY-STATED F=0,")
     print("     with the data preferring it (EW 0.8σ vs KPZ 3.7σ). NOT a closure — the QG roughening")
-    print("     law and the horizon's thermal/rough STATE remain the one open postulate.")
+    print("     law and the horizon's thermal/rough STATE remain the one open postulate (OPEN_PROBLEMS §2).")
 
     checks = [("Δ=2/(d-1): d=3 is the space-filling Δ=1 endpoint", endpoint_ok),
               ("roughening trend: stronger KPZ nonlinearity lowers Δ", trend_ok),

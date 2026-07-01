@@ -44,7 +44,7 @@ P['ISW_over_LCDM'] = float(pert.isw_ratio_sedeH(Om, GAM, E_run=lambda zz: E(zz))
 
 # --- age of universe ---
 zz = np.concatenate([[0.0], np.logspace(-6, 6, 4000)])
-P['t0_Gyr'] = float((9.778/(H0/100.)) * np.trapezoid(1.0/((1+zz)*E(zz)), zz))
+P['t0_Gyr'] = float((9.778/(H0/100.)) * np.trapz(1.0/((1+zz)*E(zz)), zz))
 
 # --- BBN null ---
 P['BBN_speedup'] = float(E(4e8)[0]/Elcdm(4e8)[0]); P['BBN_dYp'] = 0.16*(P['BBN_speedup']-1)

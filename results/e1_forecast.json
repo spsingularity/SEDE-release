@@ -1,8 +1,8 @@
 {
   "sigma_Delta_geom": 0.19198554557685663,
-  "sigma_Delta_growth": 0.4443939311581092,
-  "sigma_Delta_E1": 0.4840913299787568,
-  "sigma_Delta_combined": 0.17624197344781534,
-  "detect_decoupling_1": 2.065725903506437,
-  "detect_decoupling_0p5": 1.0328629517532184
+  "sigma_Delta_growth": 0.4443939311111217,
+  "sigma_Delta_E1": 0.4840913299356225,
+  "sigma_Delta_combined": 0.17624197344488438,
+  "detect_decoupling_1": 2.0657259036905007,
+  "detect_decoupling_0p5": 1.0328629518452503
 }

@@ -30,7 +30,7 @@ def obs_vector(Om, Delta, lnArd, zbao, zf):
     out = []
     for z in zbao:
         zz = np.linspace(0, z, 256); Ez = Efun(zz, Om, Delta)
-        DC = (C/H0) * np.trapezoid(1.0/Ez, zz)
+        DC = (C/H0) * np.trapz(1.0/Ez, zz)
         DM = DC; DH = (C/H0)/Efun(z, Om, Delta)[0]
         out.append(DM/(RD*Ard)); out.append(DH/(RD*Ard))
     # growth fσ8 (shape only; σ8 amplitude absorbed -> use f*D normalised)

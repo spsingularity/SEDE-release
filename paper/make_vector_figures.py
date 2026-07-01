@@ -14,8 +14,10 @@ import sys
 import runpy
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, ROOT)                       # for `import sede`
-sys.path.insert(0, os.path.join(ROOT, "scripts"))  # for flat sibling imports between drivers
+# ROOT (for `import sede`) + experiments/ & scripts/ (flat-namespace sibling imports,
+# e.g. run_e1_figure does `from run_lambda_verify import ...`).
+for _p in (os.path.join(ROOT, "scripts"), os.path.join(ROOT, "experiments"), ROOT):
+    sys.path.insert(0, _p)
 os.chdir(ROOT)  # the run-scripts write to relative output/ paths
 
 import matplotlib
@@ -40,13 +42,13 @@ def _savefig(self, fname, *args, **kwargs):
 mfig.Figure.savefig = _savefig
 
 SCRIPTS = [
-    "paper/figures.py",                    # fig1_mechanism .. fig6_forecast
-    "scripts/make_paper_figures.py",       # fig_F5_calibration (+ fig_F1, fig_F3, appendix)
-    "scripts/run_cmb_earlyde.py",          # fig_cmb_earlyde        (Fig 5)
-    "scripts/run_e1_figure.py",            # fig_e1_mechanism       (Fig 9)
-    "scripts/run_delta_orthogonality.py",  # fig_delta_orthogonality (Fig 10)
-    "scripts/run_chr_experiments.py",      # fig_chr_experiments
-    "scripts/run_syk_scrambling.py",       # fig_syk_scrambling     (Fig G1)
+    "paper/figures.py",                       # fig1_mechanism .. fig6_forecast
+    "scripts/make_paper_figures.py",          # fig_F5_calibration (+ fig_F1, fig_F3)
+    "experiments/run_cmb_earlyde.py",         # fig_cmb_earlyde        (Fig 5)
+    "experiments/run_e1_figure.py",           # fig_e1_mechanism       (Fig 9)
+    "experiments/run_delta_orthogonality.py", # fig_delta_orthogonality (Fig 10)
+    "experiments/run_chr_experiments.py",     # fig_chr_experiments
+    "experiments/run_syk_scrambling.py",      # fig_syk_scrambling     (Fig G1)
 ]
 
 for sc in SCRIPTS:

@@ -28,7 +28,7 @@ Reimplements (against sede.friedmann, NOT their code):
       single -1 crossing (= V2 'w0_bare'); the (1-ε/2) dynamical-temperature model
       (E_SEDE_H) → w0≈-0.85 with a double crossing (= V2 'self-consistent Cai-Kim
       closure'). The w0=-0.85 number is the λ=1 dynamical-T COUSIN, NOT the Δ=1/λ=0.5
-      Barrow model.
+      Barrow model. See OPEN_PROBLEMS.md §6b and BARROW_CRITIQUE_RESPONSE.md §E.
 
 V2 reference values (their results/*.json):
   binding: <E_bind/Mc^2>=1.93e-6, ρ_bind/ρ_DE=8.68e-7, too-small=1.15e6

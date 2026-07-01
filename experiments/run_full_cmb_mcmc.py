@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-E1 — FULL (uncompressed) primary-CMB likelihood test of SEDE
+E1 — FULL (uncompressed) primary-CMB likelihood test of SEDE  [REVISION_PLAN.md T1.1]
 ====================================================================================
 The headline ΔDIC used the COMPRESSED (R, ℓ_A) Planck priors — exactly the compression
 that hid the early–late tension which kills standard HDE (Wu et al. 2509.02945). This

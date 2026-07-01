@@ -6,6 +6,13 @@ A **Λ-free** model of dark energy derived from horizon thermodynamics: dark ene
 the thermodynamic conjugate of gravitational entropy at the cosmic apparent horizon,
 modulated by structure formation.
 
+This repository reproduces **both SEDE papers** from one entry point (`reproduce_all.py`):
+
+- **Paper I (cosmology)** — *Structural Entropy Dark Energy: a fixed-parameter, growth-gated
+  holographic dark-energy model without a cosmological constant* — `paper/tex/SEDE.pdf`.
+- **Paper II (foundations companion)** — *Is the volume-law horizon a postulate or a
+  consequence? A driven non-equilibrium reduction of SEDE* — `paper/tex/SEDE_foundations.pdf`.
+
 ```
 ρ_DE = T_AH · s_grav ,   s_grav = s_AH · f_sat(z) ,   f_sat ≤ 1 (Bousso bound).
 ```
@@ -79,7 +86,36 @@ declines; marginally disfavoured at χ²≈8/6 with precise DESI errors, consist
 RSD errors). Inconclusive and RSD-limited — it needs Euclid/LSST weak-lensing tomography. So the
 *phenomenology* is supported; the *founding physical mechanism* is the honest frontier.
 
+The reduction of the model's one quantum-gravitational postulate — with an explicit
+DERIVED / REDUCED / OPEN ledger — is developed in Paper II (`paper/tex/SEDE_foundations.pdf`)
+and summarised in `docs/theory/DRIVEN_NESS.md`.
+
 ---
+
+## Repository layout
+
+```
+SEDE/
+├── reproduce_all.py      # one entry point: runs every stage, prints a PASS/FAIL summary
+├── pyproject.toml        # package metadata (`pip install -e .` exposes `sede`)
+├── sede/                 # the importable library (models, theory, likelihoods, tests)
+├── experiments/          # analysis / experiment scripts (run_*.py) — a flat shared
+│                         #   namespace (some import each other), invoked via reproduce_all.py
+├── scripts/              # tooling: figure generators (make_*), gen_predictions, assemble_release
+├── paper/                # Paper I (SEDE.md) + Paper II (SEDE_foundations.md) + LaTeX build chain
+├── docs/
+│   ├── theory/           # derivation & implications notes (QG, Barrow, driven-NESS, cross-field…)
+│   ├── reviews/          # external-review rounds + responses
+│   └── project/          # plans, checklists, audits, pre-registration
+├── data/                 # input datasets (gitignored; re-fetched by the loaders)
+├── results/  output/     # generated tables, JSON, figures, MCMC chains
+└── cache/                # regenerable precomputed tables (gitignored)
+```
+
+Driver scripts live in `experiments/` and expect to run **from the repo root** (they
+share a flat namespace — some import each other, e.g. `import run_lambda_verify`, and
+write to `output/`/`results/`). `reproduce_all.py` sets this up automatically. To run
+one on its own, either `pip install -e .` first, or prefix with `PYTHONPATH=.:experiments`.
 
 ## Code
 
@@ -97,58 +133,45 @@ RSD errors). Inconclusive and RSD-limited — it needs Euclid/LSST weak-lensing 
 | `barrow_bh.py` | cross-horizon Barrow black-hole thermodynamics (Tier 3): S=(A/4)^{1+Δ/2}, T_B, area theorem |
 | `lambda_family.py` | λ-family landscape diagnostic |
 | `likelihood.py`, `data_loader.py`, `mcmc_pipeline.py` | legacy tabulated joint likelihood + emcee + data |
-| `verification.py` | 51 analytical tests (51/51 PASS) |
+| `verification.py` | analytical test suite (all PASS; run via `reproduce_all.py`) |
 
 ### Drivers
+
+All driver scripts below live in **`experiments/`** (run from the repo root, or via `reproduce_all.py`).
+
 **Canonical (CAMB-in-the-loop):**
 - `run_barrow_mcmc.py` — **the headline run**: marginalised parameter-free Barrow SEDE-H vs ΛCDM
-- `run_camb_joint.py` / `run_camb_mcmc.py` — CAMB-exact joint best-fit / marginalised MCMC
+- `run_camb_joint.py` — CAMB-exact joint best-fit
 - `run_lambda_verify.py` — λ-family verification (Barrow λ=0.5 etc.)
 - `run_plik_check.py` — full Planck plik_lite robustness check
-- `run_camb_check.py` — CAMB TT-spectrum / θ* comparison
 - `run_gamma_s8_check.py` — EOS-background table + γ_data/S8 (CAMB-pinned)
 
-**Experiments to strengthen & decide SEDE (§X):**
+**Experiments to strengthen & decide SEDE:**
 - `run_tier1_data.py` — Tier 1 (real data): SN robustness across Pantheon+/DES-SN5YR/Union3, Lyα z=2.33, S8
 - `run_tier2_forecast.py` — Tier 2 (forecast): Fisher σ(Δ) for DESI DR3 + Euclid
 - `run_tier3_crosshorizon.py` — Tier 3 (cross-horizon): Barrow black-hole predictions + falsifier
 - `run_crosshorizon_data.py` — Tier 3 (data): Δ=1 vs the GWTC BBH catalog + PBH-evaporation discriminator
-- `run_e1_mechanism.py` — founding-claim test: geometry f_sat vs structure f_sat (the open frontier, §AA)
+- `run_e1_mechanism.py` — founding-claim test: geometry f_sat vs structure f_sat (the open frontier)
 
-**QG / perturbation checks:**
+**Quantum-gravity junction & perturbations:**
 - `run_combined_qg_tests.py` — combined-QG-theory junction tests (C-QG1 the scale–form seam, C-QG2 Δ=holographic-vs-volume-law, C-QG3 coincidence, C-QG4 T·S=E)
 - `run_class_perturbations.py` — W9: full CLASS Boltzmann perturbations (fσ8/σ8/S8/lensing/ISW), validates smooth-DE
 
-**Cross-validations (§Y):**
+**Cross-validations:**
 - `run_xval_consistency.py` — self-consistency: GSL-along-history, ρ_DE=T·s closed loop, BBN null, age
 - `run_xval_loo.py` — leave-one-probe-out robustness (ΔΧ²<0 in every holdout)
 
+**Paper II (foundations) experiments** — the driven-NESS reduction — are wired into `reproduce_all.py`
+(stages `soc`, `deriv{A–E}`, `residue`, `ness`, `jcoup`, `deposdrv`, `socatt`, `closure`, `dscount`,
+`kpzmem`, `dsmarg`, `dsresolve`), each with validation assertions; see `docs/theory/DRIVEN_NESS.md`.
+
 ---
-
-## Repository layout
-
-```
-reproduce_all.py     one entry point — runs every stage, prints a PASS/FAIL summary
-sede/                the model package (Friedmann/thermo/likelihood/perturbations/…)
-scripts/             the analysis drivers (run_*.py, make_*.py); run from the repo root
-docs/                PREREGISTRATION.md, DATA_AUDIT.md, DATA.md
-paper/               manuscript source + LaTeX/arXiv build chain (paper/SEDE.pdf)
-results/             reference outputs (some are inter-stage inputs)
-predictions.json     sha256-locked pre-registration artifact (see docs/PREREGISTRATION.md)
-data/                observational datasets — you supply these (gitignored; see docs/DATA.md)
-output/, cache/      generated figures / tables (gitignored, regenerated on demand)
-```
 
 ## Quick start
 
-> **Environment:** verified on Python 3.12 with **numpy 2.2.6, scipy 1.13.1, camb 1.6.6**.
-> `requirements.txt` pins `numpy>=2.0,<2.3` for a reason: the code uses `np.trapezoid`
-> (needs numpy ≥ 2.0), while numpy ≥ 2.3 makes `float(size-1 array)` a hard error that
-> breaks camb 1.6.6's `set_cosmology`. Use a fresh venv to keep these pins isolated.
-
 ```bash
-pip install -r requirements.txt        # core deps (honors the numpy pin above)
-pip install -e .                        # make `sede` importable from anywhere (optional)
+pip install numpy scipy emcee colossus camb cobaya matplotlib
+pip install -e .                   # optional: exposes `sede` so experiments/ scripts run from anywhere
 
 # ONE entry point — reproduces every result and figure, in order, with a PASS/FAIL summary:
 python reproduce_all.py            # tests, theorems, EOS/γ/S8, headline MCMC, figures (~25 min)
@@ -157,32 +180,35 @@ python reproduce_all.py --fast     # skip the slow MCMC stage (everything else, 
 python reproduce_all.py --plik     # also run the full Planck plik_lite check (needs cobaya, below)
 ```
 
-Or run any stage on its own (from the repo root, so relative `data/`/`output/` paths resolve):
+Or run any stage on its own:
 
 ```bash
-python -c "from sede.verification import run_all_tests; run_all_tests()"   # 68/68 tests
+python -c "from sede.verification import run_all_tests; run_all_tests()"   # analytical test suite
 python -c "from sede import theory; theory.print_theorems()"               # Theorems 1–13
-python scripts/run_barrow_mcmc.py        # headline: parameter-free Barrow SEDE-H vs ΛCDM (~20 min)
-python scripts/run_gamma_s8_check.py     # EOS-background table + γ_data/S8 (CAMB-pinned, ~5 min)
-python scripts/run_tier1_data.py         # Tier 1: SN robustness (Pantheon+/DES5YR/Union3) + Lyα + S8
-python scripts/run_tier2_forecast.py     # Tier 2: Fisher σ(Δ) forecast for DESI DR3 + Euclid
-python scripts/run_tier3_crosshorizon.py # Tier 3: cross-horizon Barrow black-hole predictions
-python scripts/make_all_figures.py       # all figures -> output/
-python scripts/run_plik_check.py         # full Planck plik_lite robustness check (~1 min)
+# Driver scripts live in experiments/ and run from the repo root
+# (do `pip install -e .`, or prefix these with `PYTHONPATH=.:experiments`):
+python experiments/run_barrow_mcmc.py     # headline: parameter-free Barrow SEDE-H vs ΛCDM (~20 min)
+python experiments/run_gamma_s8_check.py  # EOS-background table + γ_data/S8 (CAMB-pinned, ~5 min)
+python experiments/run_tier1_data.py      # Tier 1: SN robustness (Pantheon+/DES5YR/Union3) + Lyα + S8
+python experiments/run_tier2_forecast.py  # Tier 2: Fisher σ(Δ) forecast for DESI DR3 + Euclid
+python experiments/run_tier3_crosshorizon.py  # Tier 3: cross-horizon Barrow black-hole predictions
+python scripts/make_all_figures.py            # all figures -> output/
+python experiments/run_plik_check.py          # full Planck plik_lite robustness check (~1 min)
 ```
 
-`reproduce_all.py --plik` / `scripts/run_plik_check.py` need the native Planck likelihoods installed once:
+`reproduce_all.py --plik` / `run_plik_check.py` need the native Planck likelihoods installed once:
 `cobaya-install planck_2018_highl_plik.TTTEEE_lite_native planck_2018_lowl.TT planck_2018_lowl.EE -p ./packages`
 
 ---
 
 ## Data & docs
 
-- **`paper/SEDE.pdf`** — the paper itself (the authoritative description of the model and results).
-- **`docs/DATA_AUDIT.md`** — audit of every dataset (DESI DR2, Pantheon+, Moresco, fσ8, etc.).
-- **`docs/PREREGISTRATION.md`** — dated, committed falsifiable predictions (Δ=1, w₀≈−0.98, etc.) for DESI DR3 / Euclid / LVK; sha256-locks `predictions.json` (regenerate with `python scripts/gen_predictions.py`, verify with `shasum -a 256 predictions.json` from the repo root).
-- **`docs/DATA.md`** — provenance and fetch instructions for the datasets (not redistributed here).
-- `data/`, `output/`, and `cache/` are gitignored (you supply `data/`; the rest is regenerated).
+- **`paper/tex/SEDE.pdf`**, **`paper/tex/SEDE_foundations.pdf`** — the two papers (cosmology + foundations companion).
+- **`docs/theory/DRIVEN_NESS.md`** — the driven-NESS reduction of the volume-law postulate (Paper II's spine; DERIVED/REDUCED/OPEN ledger).
+- **`docs/project/PREREGISTRATION.md`** — dated, committed falsifiable predictions (Δ=1, w₀≈−0.98, etc.) for DESI DR3 / Euclid / LVK; generated by `scripts/gen_predictions.py` (`predictions.json`).
+- **`docs/project/DATA_AUDIT.md`** — audit of every dataset (DESI DR2, Pantheon+, Moresco, fσ8, etc.).
+- **`docs/DATA.md`** — how to fetch each observational dataset into `data/`.
+- `data/` (downloaded datasets) and `cache/` (regenerable tables) are gitignored.
 
 ## Status of the physics
 The canonical SEDE-H (bare Barrow holographic, λ=0.5) reproduces DESI DR2's evolving-DE hint
@@ -203,12 +229,3 @@ only the DE sector), a stated, falsifiable stance. A z_eq-tied running Δ (SEDE_
 the identical observable model as a robustness cross-check.
 
 It is a real, testable, Λ-free model — not yet established — awaiting DR3/Euclid.
-
-## License
-
-This repository is **dual-licensed** by component:
-
-- **Code** (the `sede/` package, `scripts/`, `reproduce_all.py`, and all other source) — **MIT License** (see `LICENSE`).
-- **Manuscript text and figures** (everything under `paper/`, and the figures in `output/`) — **Creative Commons Attribution 4.0 International (CC BY 4.0)**, https://creativecommons.org/licenses/by/4.0/ (see `paper/LICENSE`).
-
-If you reuse the code, MIT applies; if you reuse text or figures, please attribute under CC BY 4.0.

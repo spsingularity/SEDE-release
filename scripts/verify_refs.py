@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-T2.7 — Reference verification against live arXiv
+T2.7 — Reference verification against live arXiv  [REVISION_PLAN.md]
 ====================================================================
 CL: AI-assisted lit search hallucinates plausible-but-fake citations; a single fake
 reference costs disproportionate credibility. "Verified against INSPIRE-HEP 2026-06"
